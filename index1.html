@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>后台</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <!-- 引入字体 -->
+    <link rel="stylesheet" type="text/css" href="./font/iconfont.css">
+    <!-- 引入common.css -->
+    <link rel="stylesheet" href="./css/base.css">
+    <!-- 引入css -->
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <!-- pc端结构开始 -->
+    <div class="pc ">
+        <!-- 头部 -->
+        <header class="layui-bg-cyan">
+            <i class="iconfont">&#xe693;</i>
+            <span class="header_character">后台管理系统</span>
+            <!-- 退出登陆 -->
+            <div class="pc_quit">
+                <span class="pc_quit_span">欢迎您: 灰灰</span>
+                <s>退出登录</s>
+            </div>
+        </header>
+
+        <!-- 导航 -->
+        <nav>
+            <ul class="layui-nav layui-nav-tree nav_ul" lay-filter="test">
+                <!-- 管理员管理 -->
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;">管理员管理</a>
+                    <dl class="layui-nav-child">
+                        <dd setIndex="1" class="layui-this">
+                            <a href="javascript:;">管理员设置</a>
+                        </dd>
+                        <dd setIndex="2">
+                            <a href="javascript:;">角色设置</a>
+                        </dd>
+                        <dd setIndex="3">
+                            <a href="javascript:;">管理员日记</a>
+                        </dd>
+                    </dl>
+                </li>
+                <!-- 业务管理 -->
+                <li class="layui-nav-item">
+                    <a href="javascript:;">业务管理</a>
+                    <dl class="layui-nav-child">
+                        <dd setIndex="4">
+                            <a href="javascript:;">用户管理</a>
+                        </dd>
+                        <dd setIndex="5">
+                            <a href="javascript:;">标签管理</a>
+                        </dd>
+                        <dd setIndex="6">
+                            <a href="javascript:;">话题管理</a>
+                        </dd>
+                        <dd setIndex="7">
+                            <a href="javascript:;">类目管理</a>
+                        </dd>
+                        <dd setIndex="8">
+                            <a href="javascript:;">品牌管理</a>
+                        </dd>
+                        <dd setIndex="9">
+                            <a href="javascript:;">品牌系列管理</a>
+                        </dd>
+                        <dd setIndex="10">
+                            <a href="javascript:;">搜索热词管理</a>
+                        </dd>
+                        <dd setIndex="11">
+                            <a href="javascript:;">广告管理</a>
+                        </dd>
+                        <dd setIndex="12">
+                            <a href="javascript:;">申请达人</a>
+                        </dd>
+                    </dl>
+                </li>
+                <!-- 内容管理 -->
+                <li class="layui-nav-item">
+                    <a href="javascript:;">内容管理</a>
+                    <dl class="layui-nav-child">
+                        <dd setIndex="13">
+                            <a href="javascript:;">PO图</a>
+                        </dd>
+                        <dd setIndex="14">
+                            <a href="javascript:;">问答</a>
+                        </dd>
+                        <dd setIndex="15">
+                            <a href="javascript:;">视频</a>
+                        </dd>
+                        <dd setIndex="16">
+                            <a href="javascript:;">日记</a>
+                        </dd>
+                    </dl>
+                </li>
+                <!-- 评论管理 -->
+                <li class="layui-nav-item">
+                    <a href="javascript:;">评论管理</a>
+                    <dl class="layui-nav-child">
+                        <dd setIndex="17">
+                            <a href="javascript:;">评论管理</a>
+                        </dd>
+                        <dd setIndex="18">
+                            <a href="javascript:;">回复管理</a>
+                        </dd>
+                    </dl>
+                </li>
+                <!-- 数据统计 -->
+                <li class="layui-nav-item">
+                    <a href="javascript:;">数据统计</a>
+                    <dl class="layui-nav-child">
+                        <dd setIndex="19">
+                            <a href="javascript:;">产品统计</a>
+                        </dd>
+                    </dl>
+                </li>
+                <!-- 高级设置 -->
+                <li class="layui-nav-item">
+                    <a href="javascript:;">高级设置</a>
+                    <dl class="layui-nav-child">
+                        <dd setIndex="20">
+                            <a href="javascript:;">渠道管理</a>
+                        </dd>
+                        <dd setIndex="21">
+                            <a href="javascript:;">版本管理</a>
+                        </dd>
+                        <dd setIndex="22">
+                            <a href="javascript:;">数据表优化</a>
+                        </dd>
+                        <dd setIndex="23">
+                            <a href="javascript:;">阿里云OSS资源</a>
+                        </dd>
+                        <dd setIndex="24">
+                            <a href="javascript:;">错误报告</a>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+
+            <!-- 导航对应内容 -->
+            <div id="outer">
+                <div class="content cur">
+                    <!-- 搜索类 -->
+                    <form action="" class="layui-form content_noe">
+                        <div class="layui-form-item choice_noe">
+                            <!-- 第一个选框 -->
+                            <label class="layui-form-label">状态</label>
+                            <div class="layui-input-inline">
+                                <select>
+                                    <option value="">全部</option>
+                                    <option value="1">启用</option>
+                                    <option value="2">禁用</option>
+                                </select>
+                            </div>
+                            <!-- 第二个选框 -->
+                            <label class="layui-form-label">角色</label>
+                            <div class="layui-input-inline">
+                                <select>
+                                    <option value="">全部</option>
+                                    <option value="1">运营</option>
+                                </select>
+                            </div>
+                            <!-- 输入框 -->
+                            <label class="layui-form-label content_name">账号</label>
+                            <input type="text" name="title" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                            <!-- 搜索按钮 -->
+                            <button type="button" class="layui-btn" lay-submit lay-filter="formDemo">搜索</button>
+                            <button type="button" class="layui-btn btn_two" lay-submit lay-filter="formDemo">新增管理员</button>
+                        </div>
+                    </form>
+                    <!-- 表单系列 -->
+                    <div class="menu">
+                        <table id="demo" lay-filter="test"></table>
+                    </div>
+                    <!-- 新增管理员页面 -->
+                    <div class="add_administrator">
+
+                    </div>
+                </div>
+                <div class="content">我是第2页内容</div>
+                <div class="content">我是第3页内容</div>
+                <div class="content">我是第4页内容</div>
+                <div class="content">我是第5页内容</div>
+                <div class="content">我是第6页内容</div>
+                <div class="content">我是第7页内容</div>
+                <div class="content">我是第8页内容</div>
+                <div class="content">我是第9页内容</div>
+                <div class="content">我是第10页内容</div>
+                <div class="content">我是第11页内容</div>
+                <div class="content">我是第12页内容</div>
+                <div class="content">我是第13页内容</div>
+                <div class="content">我是第14页内容</div>
+                <div class="content">我是第15页内容</div>
+                <div class="content">我是第16页内容</div>
+                <div class="content">我是第17页内容</div>
+                <div class="content">我是第18页内容</div>
+                <div class="content">我是第19页内容</div>
+                <div class="content">我是第20页内容</div>
+                <div class="content">我是第21页内容</div>
+                <div class="content">我是第22页内容</div>
+                <div class="content">我是第23页内容</div>
+                <div class="content">我是第24页内容</div>
+            </div>
+
+            <!-- 面包屑 -->
+            <div class="crumbs">
+                <span class="layui-breadcrumb">
+                    <a href="javascript:;">管理员管理</a>
+                    <a>
+                        <cite>管理员设置</cite>
+                    </a>
+                </span>
+            </div>
+        </nav>
+
+    </div>
+    <!-- pc端结构结束 -->
+
+
+
+    <!-- web端结构开始 -->
+    <div class="web">
+        222
+    </div>
+    <!-- web端结构结束 -->
+
+
+
+
+
+
+
+    <!-- 引入jquery -->
+    <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="./layui/layui.js"></script>
+    <script src="./js/index.js"></script>
+    <script>
+        // 初始化
+        layui.use(['element', 'form', 'table'], function () {
+            var element = layui.element;
+            var form = layui.form;
+            var table = layui.table;
+
+            //一些事件监听
+            element.on('tab(demo)', function (data) {
+                console.log(data);
+            });
+
+            //第一个实例
+            table.render({
+                elem: '#demo',
+                height: 315,
+                // url: './test.json',
+                url: './test.json',
+                // typeDate:'json',
+                page: true, //开启分页
+                skin:'nob',//无边框
+                cols: [
+                    [ //表头
+                        {
+                            field: 'id',
+                            title: '账号',
+                            width: 160,
+                            fixed: 'left'
+                        }, {
+                            field: 'username',
+                            title: '角色',
+                            width: 160
+                        }, {
+                            field: 'sex',
+                            title: '注册时间',
+                            width: 160,
+                            sort: true
+                        }, {
+                            field: 'city',
+                            title: '最后登陆时间',
+                            width: 160,
+                            sort: true,
+                        }, {
+                            field: 'sign',
+                            title: '最后ip',
+                            width: 160
+                        }, {
+                            field: 'experience',
+                            title: '状态',
+                            width: 160,
+                            sort: true
+                        }, {
+                            field: 'score',
+                            title: '操作',
+                            width: 160
+                        }
+                    ]
+                ]
+            });
+        });
+    </script>
+</body>
+
+</html>

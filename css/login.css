@@ -1,0 +1,83 @@
+/*大屏幕*/
+@media screen and (min-width: 768px) {
+  .web {
+    display: none;
+  }
+  .pc {
+    width: 100%;
+    height: 100%;
+    /* 背景 */
+    /* login */
+  }
+  .pc .bg {
+    width: 100%;
+    height: 100vh;
+    background: url(../images/bg.jpg) no-repeat 100%;
+    background-position: center center;
+  }
+  .pc .section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+  }
+  .pc .section #form {
+    background: #fff;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .pc .section #form .form-group label {
+    font-size: 14px;
+  }
+  .pc .section #form button {
+    background: #48b0f7;
+    color: #fff;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    letter-spacing: 10px;
+  }
+}
+/*手机屏幕*/
+@media screen and (max-width: 767px) {
+  .pc {
+    display: none;
+  }
+  .web {
+    width: 100%;
+    height: 100%;
+    /* 小屏可见 */
+    /* login */
+  }
+  .web .bg_min {
+    width: 100%;
+    height: 100vh;
+    background: url(../images/bg_web.jpeg) no-repeat 100%;
+    background-size: cover;
+  }
+  .web .section_min {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+  }
+  .web .section_min #form_min {
+    background: #fff;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .web .section_min #form_min button {
+    width: 100px;
+    height: 50px;
+    background: blue;
+  }
+}

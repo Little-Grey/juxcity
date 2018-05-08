@@ -1,0 +1,140 @@
+/*大屏幕*/
+
+@media screen and (min-width:768px) {
+    .web {
+        display: none;
+    }
+    .pc {
+        width: 100%;
+        height: 100%;
+        /* 头部 */
+        header {
+            height: 60px;
+            width: 100%;
+            overflow: hidden;
+            box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.6);
+            i {
+                font-size: 40px;
+                padding-left: 80px;
+                line-height: 60px;
+                float: left;
+            }
+            .header_character {
+                float: left;
+                font-size: 30px;
+                font-weight: 700;
+                line-height: 60px;
+                padding-left: 30px;
+            }
+            .pc_quit {
+                float: right;
+                padding-right: 40px;
+                .pc_quit_span {
+                    float: left;
+                    padding-right: 20px;
+                    font-size: 20px;
+                    padding-top: 16px;
+                }
+                s {
+                    float: left;
+                    margin-top: 18px;
+                    font-size: 16px;
+                    font-family: arial;
+                    cursor: pointer;
+                    &:hover {
+                        color: #FF5722;
+                    }
+                }
+            }
+        }
+        /* 导航 */
+        nav {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            position: relative;
+            .nav_ul {
+                flex-grow: 0;
+                z-index: 2;
+            }
+            #outer {
+                margin-top: 50px;
+                height: 100vh;
+                flex-grow: 1; 
+                position: relative;
+                .content {
+                    display: none;
+                    &.cur {
+                        display: block;
+                    }
+                    /* 管理员设置 */
+                    /* 搜索类 */
+                    .content_noe {
+                        .choice_noe {
+                            label {
+                                padding: 0;
+                                width: 50px;
+                                height: 30px;
+                                line-height: 38px;
+                            }
+                            .layui-input-inline {
+                                padding-left: 30px;
+                                width: 200px;
+                            }
+                            .content_name{
+                                margin-right:30px;
+                            }
+                            input{
+                                width: 200px;
+                                display: inline-block;
+                            }
+                            button{
+                             margin-left:20px;   
+                            }
+                        }
+                    }
+                    /* 表单系列 */
+                    .menu{
+                        
+                    }
+                    /* 新增管理员 */
+                    .add_administrator{
+                        background:red;
+                        width: 100%;
+                        height: 100vh;
+                        width: 100%;
+                        position: absolute;
+                        top:0px;
+                        right:0px;
+                    }
+                }
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 40px;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                    background: #eee;
+                }
+            }
+        }
+        /* 面包屑 */
+        .crumbs {
+            height: 40px; // width: 10
+            position: absolute;
+            top: 0;
+            left: 200px;
+            line-height: 40px;
+            .layui-breadcrumb {}
+        }
+    }
+}
+
+/*手机屏幕*/
+
+@media screen and (max-width:767px) {
+    .pc {
+        display: none;
+    }
+}
