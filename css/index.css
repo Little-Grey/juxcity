@@ -51,7 +51,7 @@
   }
   .pc nav {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     position: relative;
   }
@@ -64,6 +64,9 @@
     height: 100vh;
     flex-grow: 1;
     position: relative;
+    /* 管理员设置 */
+    /* 角色设置 */
+    /* 管理员日记 */
   }
   .pc nav #outer .content {
     display: none;
@@ -96,14 +99,76 @@
     margin-left: 20px;
   }
   .pc nav #outer .content .add_administrator {
-    background: red;
+    background: #fff;
     height: 100vh;
     width: 100%;
     position: absolute;
     top: 0px;
     right: 0px;
+    display: none;
+    margin-top: 50px;
   }
-  .pc nav #outer::after {
+  .pc nav #outer .content .add_administrator .dministrator_div {
+    width: 500px;
+    height: 400px;
+    background: pink;
+    margin-left: 120px;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .pc nav #outer .content .add_administrator .dministrator_div #dministrator_form {
+    width: 420px;
+    height: 320px;
+    padding: 20px;
+    /* 选择角色 */
+    /* 选择状态 */
+    /* 确认添加管理员按钮 */
+  }
+  .pc nav #outer .content .add_administrator .dministrator_div #dministrator_form .form-group {
+    /* 账号输入框 */
+    /* 密码输入框 */
+  }
+  .pc nav #outer .content .add_administrator .dministrator_div #dministrator_form .form-group:nth-child(1) {
+    margin-top: 50px;
+    height: 40px;
+    width: 100%;
+    float: left;
+  }
+  .pc nav #outer .content .add_administrator .dministrator_div #dministrator_form .form-group:nth-child(1) input {
+    width: 200px;
+  }
+  .pc nav #outer .content .add_administrator .dministrator_div #dministrator_form .form-group:nth-child(2) {
+    height: 40px;
+    width: 100%;
+    float: left;
+  }
+  .pc nav #outer .content .add_administrator .dministrator_div #dministrator_form .form-group:nth-child(2) input {
+    width: 200px;
+  }
+  .pc nav #outer .content .add_administrator .dministrator_div #dministrator_form label {
+    font-size: 14px;
+  }
+  .pc nav #outer .content .add_administrator .dministrator_div #dministrator_form .role {
+    width: 200px;
+  }
+  .pc nav #outer .content .add_administrator .dministrator_div #dministrator_form .state {
+    margin-top: 10px;
+  }
+  .pc nav #outer .content .add_administrator .dministrator_div #dministrator_form .btn_submit {
+    margin-top: 40px;
+    padding-left: 110px;
+  }
+  .pc nav #outer .content .add_administrator .dministrator_div #dministrator_form .btn_submit button:nth-child(1) {
+    margin-right: 40px;
+  }
+  .pc nav #outer .content_01 {
+    border-top: 1px solid #eee;
+  }
+  .pc nav #outer .content_01::after {
     content: '';
     position: absolute;
     top: 40px;
@@ -112,12 +177,97 @@
     height: 1px;
     background: #eee;
   }
-  .pc .crumbs {
+  .pc nav #outer .content_02 {
+    width: 100%;
+    position: relative;
+    height: 100vh;
+    border-top: 1px solid #eee;
+    /* 角色设计-添加角色页面 */
+    /* input框 */
+    /* 菜单 */
+  }
+  .pc nav #outer .content_02 #content_02_form {
+    width: 100%;
     height: 40px;
+  }
+  .pc nav #outer .content_02 #content_02_form .form_group {
+    float: left;
+    margin: 0;
+  }
+  .pc nav #outer .content_02 #content_02_form .form_group label {
+    font-size: 14px;
+  }
+  .pc nav #outer .content_02 #content_02_form .form_group input {
+    width: 200px;
+  }
+  .pc nav #outer .content_02 #content_02_form .btn_submit_two {
+    float: left;
+    margin-left: 20px;
+  }
+  .pc nav #outer .content_02 .add_role {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+  }
+  .pc nav #outer .content_02 .form_input {
+    display: flex;
+  }
+  .pc nav #outer .content_02 .form_input label {
+    font-size: 14px;
+  }
+  .pc nav #outer .content_02 .form_input input {
+    width: 200px;
+  }
+  .pc nav #outer .content_02 .role_menu {
+    padding-left: 69px;
+  }
+  .pc nav #outer .content_02 .role_menu .role_label {
+    font-size: 14px;
+    float: left;
+    height: 80px;
+    flex-grow: 0;
+    margin-right: 10px;
+  }
+  .pc nav #outer .content_02 .role_menu #form_menu {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .pc nav #outer .content_02 .role_menu #form_menu div {
+    margin: 0 12px 8px 0;
+  }
+  .pc nav #outer .content_02 .role_menu .role_label2 {
+    font-size: 14px;
+    float: left;
+    height: 380px;
+    margin-right: 10px;
+  }
+  .pc nav #outer .content_02 .role_menu .btn_submit_role {
+    margin-left: 50px;
+  }
+  .pc nav #outer .content_02 .role_menu .btn_submit_role button:nth-child(1) {
+    margin-right: 20px;
+  }
+  .pc nav #outer .content_03 {
+    width: 100%;
+    height: 100vh;
+    border-top: 1px solid #eee;
+  }
+  .pc nav #outer .content_03 #form_diary {
+    margin-top: 10px;
+  }
+  .pc nav #outer .content_03 #form_diary .diary_label {
+    font-size: 14px;
+  }
+  .pc .crumbs {
+    height: 50px;
     position: absolute;
     top: 0;
     left: 200px;
-    line-height: 40px;
+    line-height: 50px;
   }
 }
 /*手机屏幕*/

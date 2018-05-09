@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>后台</title>
+    <link rel="shortcut icon" href="./favicon.ico">
+
     <link rel="stylesheet" href="./layui/css/layui.css">
     <!-- 引入字体 -->
     <link rel="stylesheet" type="text/css" href="./font/iconfont.css">
@@ -144,7 +146,8 @@
 
             <!-- 导航对应内容 -->
             <div id="outer">
-                <div class="content cur">
+                <!-- 管理员设置 -->
+                <div class="content content_01 cur">
                     <!-- 搜索类 -->
                     <form action="" class="layui-form content_noe">
                         <div class="layui-form-item choice_noe">
@@ -167,7 +170,7 @@
                             </div>
                             <!-- 输入框 -->
                             <label class="layui-form-label content_name">账号</label>
-                            <input type="text" name="title" placeholder="请输入标题" autocomplete="off" class="layui-input">
+                            <input type="text" name="title" placeholder="请输入账号" autocomplete="off" class="layui-input">
                             <!-- 搜索按钮 -->
                             <button type="button" class="layui-btn" lay-submit lay-filter="formDemo">搜索</button>
                             <button type="button" class="layui-btn btn_two" lay-submit lay-filter="formDemo">新增管理员</button>
@@ -179,11 +182,237 @@
                     </div>
                     <!-- 新增管理员页面 -->
                     <div class="add_administrator">
+                        <fieldset class="layui-elem-field layui-field-title">
+                            <legend>
+                                <a class="layui-btn layui-btn-primary back_admin">返回</a>
+                                新增管理员
+                            </legend>
+                        </fieldset>
+                        <div class="dministrator_div">
+
+                            <form id="dministrator_form" class="layui-form">
+                                <div class="layui-form-item layui-input-inline form-group">
+                                    <!-- 账号输入框 -->
+                                    <label class="layui-form-label">账号</label>
+                                    <input type="text" name="title" placeholder="请输入账号" autocomplete="off" class="layui-input">
+                                </div>
+                                <div class="layui-form-item layui-input-inline form-group">
+                                    <!-- 密码输入框 -->
+                                    <label class="layui-form-label">密码</label>
+                                    <input type="text" name="title" placeholder="请输入密码" autocomplete="off" class="layui-input">
+                                </div>
+                                <!-- 选择角色 -->
+                                <label class="layui-form-label">角色</label>
+                                <div class="layui-input-inline role">
+                                    <select>
+                                        <option value="">请选择角色</option>
+                                        <option value="1">运营</option>
+                                        <!-- <option value="2">禁用</option> -->
+                                    </select>
+                                </div>
+                                <!-- 选择状态 -->
+                                <div class="state">
+                                    <label class="layui-form-label">状态</label>
+                                    <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用">
+                                </div>
+                                <!-- 确认添加管理员按钮 -->
+                                <div class="btn_submit">
+                                    <!-- 确认按钮 -->
+                                    <button type="button" class="layui-btn" lay-submit lay-filter="formDemo">确认</button>
+                                    <!-- 重置按钮 -->
+                                    <button type="button" class="layui-btn" lay-submit lay-filter="formDemo">重置</button>
+                                </div>
+                            </form>
+                        </div>
+
+
+
 
                     </div>
                 </div>
-                <div class="content">我是第2页内容</div>
-                <div class="content">我是第3页内容</div>
+                <!-- 角色设置 -->
+                <div class="content content_02">
+                    <form id="content_02_form" class="layui-form">
+                        <div class="layui-form-item layui-input-inline form_group">
+                            <!-- 账号输入框 -->
+                            <label class="layui-form-label">名称</label>
+                            <input type="text" name="title" placeholder="请输入名称" autocomplete="off" class="layui-input">
+                        </div>
+
+                        <!-- 确认添加管理员按钮 -->
+                        <div class="btn_submit_two">
+                            <!-- 搜索按钮 -->
+                            <button type="button" class="layui-btn" lay-submit lay-filter="formDemo">搜索</button>
+                            <!-- 添加按钮 -->
+                            <button type="button" class="layui-btn part" lay-submit lay-filter="formDemo">增加角色</button>
+                        </div>
+                    </form>
+                    <!-- 列表 -->
+                    <div>
+                        <table id="role" lay-filter="test"></table>
+                    </div>
+                    <!-- 角色设计-添加角色页面 -->
+                    <div class="add_role">
+                        <!-- 顶部的线跟返回 -->
+                        <fieldset class="layui-elem-field layui-field-title">
+                            <legend>
+                                <a class="layui-btn layui-btn-primary back_part">返回</a>
+                                新增角色
+                            </legend>
+                        </fieldset>
+                        <!-- input框 -->
+                        <div class="layui-form-item layui-input-inline form_input">
+                            <!-- 账号输入框 -->
+                            <label class="layui-form-label">名称</label>
+                            <input type="text" name="title" placeholder="请输入名称" autocomplete="off" class="layui-input">
+                        </div>
+                        <!-- 菜单 -->
+                        <div class="role_menu">
+
+                            <label class="role_label">菜单</label>
+                            <form action="" id="form_menu" class="layui-form">
+                                <input type="checkbox" name="" title="管理员设置">
+                                <input type="checkbox" name="" title="管理员设置">
+                                <input type="checkbox" name="" title="管理员设置">
+                                <input type="checkbox" name="" title="管理员设置">
+                                <input type="checkbox" name="" title="管理员设置">
+                                <input type="checkbox" name="" title="管理员设置">
+                                <input type="checkbox" name="" title="管理员设置">
+                                <input type="checkbox" name="" title="管理员设置">
+                                <input type="checkbox" name="" title="管理员设置">
+                                <input type="checkbox" name="" title="管理员设置">
+                                <input type="checkbox" name="" title="管理员设置">
+                                <input type="checkbox" name="" title="管理员设置">
+                                <input type="checkbox" name="" title="管理员设置">
+                                <input type="checkbox" name="" title="管理员设置">
+                                <input type="checkbox" name="" title="管理员设置">
+                                <input type="checkbox" name="" title="管理员设置">
+                                <input type="checkbox" name="" title="管理员设置">
+                                <input type="checkbox" name="" title="管理员设置">
+                                <input type="checkbox" name="" title="管理员设置">
+                                <input type="checkbox" name="" title="管理员设置">
+                                <input type="checkbox" name="" title="管理员设置">
+                                <input type="checkbox" name="" title="管理员设置">
+                                <input type="checkbox" name="" title="管理员设置">
+                                <input type="checkbox" name="" title="管理员设置">
+                            </form>
+                            <!-- 权限 -->
+                            <label class="role_label2">权限</label>
+                            <form action="" id="form_menu" class="layui-form">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                                <input type="checkbox" name="" title="查询管理员">
+                            </form>
+
+                            <!-- 确认添加管理员按钮 -->
+                            <div class="btn_submit_role">
+                                <!-- 搜索按钮 -->
+                                <button type="button" class="layui-btn" lay-submit lay-filter="formDemo">搜索</button>
+                                <!-- 添加按钮 -->
+                                <button type="button" class="layui-btn" lay-submit lay-filter="formDemo">增加角色</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 管理员日记 -->
+                <div class="content content_03">
+                    <form action="" class="layui-form" id="form_diary">
+                        <label class="layui-form-label diary_label">管理员</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">启用</option>
+                                <option value="2">禁用</option>
+                            </select>
+                        </div>
+                        <!-- 管理员日记搜索按钮 -->
+                        <div class="btn_submit_diary layui-input-inline">
+                            <!-- 搜索按钮 -->
+                            <button type="button" class="layui-btn" lay-submit lay-filter="formDemo">搜索</button>
+                        </div>
+                    </form>
+                    <!-- 管理员日记列表-表头的数据在下面实例化 -->
+                    <div class="diary_list">
+                        <table id="diary_lists" lay-filter="test"></table>
+                    </div>
+
+
+                </div>
                 <div class="content">我是第4页内容</div>
                 <div class="content">我是第5页内容</div>
                 <div class="content">我是第6页内容</div>
@@ -205,6 +434,7 @@
                 <div class="content">我是第22页内容</div>
                 <div class="content">我是第23页内容</div>
                 <div class="content">我是第24页内容</div>
+
             </div>
 
             <!-- 面包屑 -->
@@ -245,6 +475,7 @@
             var element = layui.element;
             var form = layui.form;
             var table = layui.table;
+            // var table1 = layui.table;
 
             //一些事件监听
             element.on('tab(demo)', function (data) {
@@ -259,7 +490,7 @@
                 url: './test.json',
                 // typeDate:'json',
                 page: true, //开启分页
-                skin:'nob',//无边框
+                skin: 'nob', //无边框
                 cols: [
                     [ //表头
                         {
@@ -298,7 +529,63 @@
                     ]
                 ]
             });
-        });
+            // 角色,数据第二个实例化
+            table.render({
+                elem: '#role',
+                height: 315,
+                // url: './test.json',
+                url: './test.json',
+                // typeDate:'json',
+                page: true, //开启分页
+                skin: 'nob', //无边框
+                cols: [
+                    [ //表头
+                        {
+                            field: 'id',
+                            title: '名称',
+                            width: '50%',
+                            fixed: 'left'
+                        }, {
+                            field: 'score',
+                            title: '操作',
+                            width: '50%'
+                        }
+                    ]
+                ]
+            });
+            //管理员日记,第三个数据列表实例化
+            table.render({
+                elem: '#diary_lists',
+                height: 315,
+                // url: './test.json',
+                url: './test.json',
+                // typeDate:'json',
+                page: true, //开启分页
+                skin: 'nob', //无边框
+                cols: [
+                    [ //表头
+                        {
+                            field: 'id',
+                            title: '管理员',
+                            width: '25%',
+                        },  {
+                            field: 'experience',
+                            title: '时间',
+                            width: '25%',
+                            sort: true
+                        },{
+                            field: 'score',
+                            title: 'IP',
+                            width: '25%'
+                        },{
+                            field: 'score',
+                            title: '备注',
+                            width: '25%'
+                        }
+                    ]
+                ]
+            });
+        })
     </script>
 </body>
 
