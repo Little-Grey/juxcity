@@ -262,6 +262,10 @@
   .pc nav #outer .content_03 #form_diary .diary_label {
     font-size: 14px;
   }
+  .pc nav #outer .content_04 {
+    width: 100%;
+    height: 100vh;
+  }
   .pc .crumbs {
     height: 50px;
     position: absolute;

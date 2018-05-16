@@ -1,6 +1,6 @@
 $(function () {
     // 退出登录
-    $('.pc_quit s').on('click',function(){
+    $('.pc_quit s').on('click', function () {
         var r = confirm("确认退出?")
         if (r == true) {
             alert('退出成功');
@@ -17,9 +17,6 @@ $(function () {
     // sessionStorage
     $(document).ready(function () {
 
-        // 调用
-        getHeight('.add_administrator', '.layui-bg-cyan');
-        getHeight('#outer', '.layui-bg-cyan');
 
         var user = JSON.parse(sessionStorage.getItem('index'))
         change(user);
@@ -43,6 +40,9 @@ $(function () {
     //     })
     // })
 
+    // 调用
+    getHeight('.add_administrator', '.layui-bg-cyan');
+    getHeight('#outer', '.layui-bg-cyan');
 
     /**
      * 封装了一个获取到整个屏幕的高度.100vh单位系获取整个屏幕的宽度,
@@ -52,7 +52,7 @@ $(function () {
      */
     function getHeight(box1, box2) {
         $(box1).css({
-            'height': $(window).height() - $(box2).height() - $('.crumbs').height()
+            'height': $(window).height() - $(box2).height()
         });
     }
 
@@ -73,11 +73,11 @@ $(function () {
     });
 
     // 点击增加角色弹出对应页面-添加角色页面
-    $('.part').on('click',function(){
+    $('.part').on('click', function () {
         $('.add_role').show();
     })
     // 点击新添加角色页面返回,返回上一层
-    $('.back_part').on('click',function(){
+    $('.back_part').on('click', function () {
         var r = confirm("确认返回?")
         if (r == true) {
             $('.add_role').hide();

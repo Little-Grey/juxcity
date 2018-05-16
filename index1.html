@@ -50,7 +50,7 @@
                     </dl>
                 </li>
                 <!-- 业务管理 -->
-                <li class="layui-nav-item">
+                <li class="layui-nav-item layui-nav-itemed">
                     <a href="javascript:;">业务管理</a>
                     <dl class="layui-nav-child">
                         <dd setIndex="4">
@@ -413,7 +413,8 @@
 
 
                 </div>
-                <div class="content">我是第4页内容</div>
+                <!-- 用户管理 -->
+                <div class="content content_04">我是第4页内容</div>
                 <div class="content">我是第5页内容</div>
                 <div class="content">我是第6页内容</div>
                 <div class="content">我是第7页内容</div>
@@ -462,6 +463,24 @@
 
 
 
+    <!-- 下述是templet对应的模板，它可以存放在页面的任意位置。模板遵循于 laytpl 语法，可读取到返回的所有数据 -->
+    <!-- 先对来说,就是templet模版引擎 -->
+    <script type="text/html" id="titleTpl">
+        {{# if(d.tests==1){ }}<!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
 
 
 
@@ -475,7 +494,6 @@
             var element = layui.element;
             var form = layui.form;
             var table = layui.table;
-            // var table1 = layui.table;
 
             //一些事件监听
             element.on('tab(demo)', function (data) {
@@ -485,10 +503,8 @@
             //第一个实例
             table.render({
                 elem: '#demo',
-                height: 315,
-                // url: './test.json',
+                height: '315px',
                 url: './test.json',
-                // typeDate:'json',
                 page: true, //开启分页
                 skin: 'nob', //无边框
                 cols: [
@@ -520,19 +536,32 @@
                             field: 'experience',
                             title: '状态',
                             width: 160,
-                            sort: true
+                            sort: true,
+                            templet: '#titleTpl'//添加了模版引擎的数据,添加了按钮
                         }, {
                             field: 'score',
                             title: '操作',
                             width: 160
                         }
                     ]
-                ]
+                ],
+                // done: function (res, curr, count) {
+                //     console.log(res);
+                //     if (res.data[0].experience == 1) {
+                //         // $('p').after('<a>http</a >');
+                //         $('.laytable-cell-1-experience').append(
+                //             '<form action="" class="layui-form"><div class="layui-form-item"><input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用"></div></form>'
+                //         )
+                //     }
+                // }
+                done: function (res, curr, count) {
+                    console.log(res);
+                }
             });
             // 角色,数据第二个实例化
             table.render({
                 elem: '#role',
-                height: 315,
+                height: '315px',
                 // url: './test.json',
                 url: './test.json',
                 // typeDate:'json',
@@ -556,7 +585,7 @@
             //管理员日记,第三个数据列表实例化
             table.render({
                 elem: '#diary_lists',
-                height: 315,
+                height: '315px',
                 // url: './test.json',
                 url: './test.json',
                 // typeDate:'json',
@@ -568,16 +597,16 @@
                             field: 'id',
                             title: '管理员',
                             width: '25%',
-                        },  {
+                        }, {
                             field: 'experience',
                             title: '时间',
                             width: '25%',
                             sort: true
-                        },{
+                        }, {
                             field: 'score',
                             title: 'IP',
                             width: '25%'
-                        },{
+                        }, {
                             field: 'score',
                             title: '备注',
                             width: '25%'
