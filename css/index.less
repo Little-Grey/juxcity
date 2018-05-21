@@ -50,7 +50,7 @@
         /* 导航 */
         nav {
             width: 100%;
-            height: 100vh;
+            // height: 100vh;
             display: flex;
             position: relative;
             .nav_ul {
@@ -94,7 +94,12 @@
                         }
                     }
                     /* 表单系列 */
-                    .menu {}
+                    .menu_01 {
+                        /* 管理员列表操作字体剧中 */
+                        .laytable-cell-1-score {
+                            text-align: center;
+                        }
+                    }
                     /* 新增管理员 */
                     .add_administrator {
                         background: #fff;
@@ -184,7 +189,7 @@
                 .content_02 {
                     width: 100%;
                     position: relative;
-                    height: 100vh;
+                    // height: 100vh;
                     border-top: 1px solid #eee;
                     #content_02_form {
                         // display: flex;
@@ -203,6 +208,14 @@
                         .btn_submit_two {
                             float: left;
                             margin-left: 20px;
+                        }
+                    }
+                    /* 数据列表 */
+                    .menu_02 {
+                        .laytable-cell-2-score {
+                            span {
+                                padding-left: 50px;
+                            }
                         }
                     }
                     /* 角色设计-添加角色页面 */
@@ -261,7 +274,7 @@
                 /* 管理员日记 */
                 .content_03 {
                     width: 100%;
-                    height: 100vh;
+                    // height: 100vh;
                     border-top: 1px solid #eee;
                     #form_diary {
                         margin-top: 10px;
@@ -270,16 +283,332 @@
                         }
                     }
                 }
+                /* 用户管理 */
                 .content_04 {
                     width: 100%;
-                    height: 100vh;
-                    
+                    // height: 100vh;
+                    #form_user {
+                        height: 38px;
+                        .user_label {
+                            padding: 9px 0px;
+                            text-align: center;
+                        }
+                        .layui-input-inline {
+                            float: left;
+                            display: flex;
+                            input {
+                                width: 168px;
+                            }
+                            .but_user {
+                                margin-left: 20px;
+                            }
+                        }
+                    }
+                }
+                /* 标签管理 */
+                .content_05 {
+                    width: 100%;
+                    // height: 100vh;
+                    #form_labels {
+                        height: 38px;
+                        .labels_label {
+                            padding: 9px 0px;
+                            text-align: center;
+                        }
+                        .layui-input-inline {
+                            float: left;
+                            display: flex;
+                            input {
+                                width: 168px;
+                            }
+                            .but_user {
+                                margin-left: 20px;
+                            }
+                            .but_user_02 {
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+                }
+                /* 话题管理 */
+                .content_06 {
+                    width: 100%;
+                    // height: 100vh;
+                    #form_topic {
+                        height: 38px;
+                        .topic_label {
+                            padding: 9px 0px;
+                            text-align: center;
+                        }
+                        .layui-input-inline {
+                            float: left;
+                            display: flex;
+                            input {
+                                width: 168px;
+                            }
+                        }
+                        .but_topic {
+                            margin-left: 20px;
+                        }
+                        .but_topic_02 {
+                            margin-left: 10px;
+                        }
+                    }
+                    /* 缩略图 */
+                    .topic_list {
+                        .layui-border-box {
+                            .layui-table-box {
+                                .layui-table-main {
+                                    table {
+                                        tbody {
+                                            tr {
+                                                .layui-table-cell {
+                                                    .layui-form-item {
+                                                        width: 52px;
+                                                        height: 30px;
+                                                        img {
+                                                            width: 100%;
+                                                            height: 100%;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                /* 类目管理 */
+                .content_07 {
+                    width: 100%;
+                    // height: 100vh;
+                    #form_category {
+                        height: 38px; 
+                        .category_label {
+                            padding: 9px 0px;
+                            text-align: center;
+                        }
+                        .layui-input-inline {
+                            float: left;
+                            display: flex;
+                            input {
+                                width: 168px;
+                            }
+                        }
+                        .but_category {
+                            margin-left: 20px;
+                        }
+                        .but_category_02 {
+                            margin-left: 10px;
+                        }
+                    }
+                }
+                /* 品牌管理 */
+                .content_08 {
+                    width: 100%;
+                    // height: 100vh;
+                    #form_brand {
+                        height: 38px; 
+                        .brand_label {
+                            padding: 9px 0px;
+                            text-align: center;
+                        }
+                        .layui-input-inline {
+                            float: left;
+                            display: flex;
+                            input {
+                                width: 168px;
+                            }
+                        }
+                        .but_brand {
+                            margin-left: 20px;
+                        }
+                        .but_brand_02 {
+                            margin-left: 10px;
+                        }
+                    }
+                }
+                /* 品牌系列管理 */
+                .content_09{
+                    width: 100%;
+                    // height: 100vh;
+                    #form_Series {
+                        height: 38px; 
+                        .Series_label {
+                            padding: 9px 0px;
+                            text-align: center;
+                        }
+                        .layui-input-inline {
+                            float: left;
+                            display: flex;
+                            input {
+                                width: 168px;
+                            }
+                        }
+                        .but_Series {
+                            margin-left: 20px;
+                        }
+                        .but_Series_02 {
+                            margin-left: 10px;
+                        }
+                    }
+                }
+                /* 搜索热词管理 */
+                .content_10{
+                    width: 100%;
+                    // height: 100vh;
+                    #form_hot {
+                        height: 38px; 
+                        .hot_label {
+                            padding: 9px 0px;
+                            text-align: center;
+                        }
+                        .layui-input-inline {
+                            float: left;
+                            display: flex;
+                            input {
+                                width: 168px;
+                            }
+                        }
+                        .but_hot {
+                            margin-left: 20px;
+                        }
+                        .but_hot_02 {
+                            margin-left: 10px;
+                        }
+                    }
+                }
+                /* 广告管理 */
+                .content_11{
+                    width: 100%;
+                    // height: 100vh;
+                    #form_advertising {
+                        height: 38px; 
+                        .advertising_label {
+                            padding: 9px 0px;
+                            text-align: center;
+                        }
+                        .layui-input-inline {
+                            float: left;
+                            display: flex;
+                            input {
+                                width: 168px;
+                            }
+                        }
+                        .but_advertising {
+                            margin-left: 20px;
+                        }
+                        .but_advertising_02 {
+                            margin-left: 10px;
+                        }
+                    }
+                    /* 缩略图 */
+                    .advertising_list {
+                        .layui-border-box {
+                            .layui-table-box {
+                                .layui-table-main {
+                                    table {
+                                        tbody {
+                                            tr {
+                                                .layui-table-cell {
+                                                    .layui-form-item {
+                                                        width: 52px;
+                                                        height: 30px;
+                                                        img {
+                                                            width: 100%;
+                                                            height: 100%;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                /* 申请达人 */
+                .content_12{
+                    width: 100%;
+                    // height: 100vh;
+                    #form_applyExpert {
+                        height: 38px; 
+                        .applyExpert_label {
+                            padding: 9px 0px;
+                            text-align: center;
+                        }
+                        .layui-input-inline {
+                            float: left;
+                            display: flex;
+                            input {
+                                width: 168px;
+                            }
+                        }
+                        .but_applyExpert {
+                            margin-left: 20px;
+                        }
+                    }
+                }
+                /* 申请达人 */
+                .content_13{
+                    width: 100%;
+                    // height: 100vh;
+                    #form_Po {
+                        height: 38px; 
+                        .Po_label {
+                            // padding: 9px 0px;
+                            width: 50px;
+                            padding: 9px 0px;
+                            text-align: center;
+                        }
+                        .layui-input-inline {
+                            float: left;
+                            display: flex;
+                            input {
+                                width: 120px;
+                            }
+                        }
+                        .but_Po {
+                            margin-left: 20px;
+                        }
+                        .but_Po_02 {
+                            margin-left: 10px;
+                        }
+                    }
+                    /* 缩略图 */
+                    .Po_list {
+                        .layui-border-box {
+                            .layui-table-box {
+                                .layui-table-main {
+                                    table {
+                                        tbody {
+                                            tr {
+                                                .layui-table-cell {
+                                                    .layui-form-item {
+                                                        width: 52px;
+                                                        height: 30px;
+                                                        img {
+                                                            width: 100%;
+                                                            height: 100%;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
         /* 面包屑 */
         .crumbs {
-            height: 50px; // width: 10
+            height: 50px; 
             position: absolute;
             top: 0;
             left: 200px;

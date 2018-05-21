@@ -51,7 +51,6 @@
   }
   .pc nav {
     width: 100%;
-    height: 100vh;
     display: flex;
     position: relative;
   }
@@ -67,6 +66,16 @@
     /* 管理员设置 */
     /* 角色设置 */
     /* 管理员日记 */
+    /* 用户管理 */
+    /* 标签管理 */
+    /* 话题管理 */
+    /* 类目管理 */
+    /* 品牌管理 */
+    /* 品牌系列管理 */
+    /* 搜索热词管理 */
+    /* 广告管理 */
+    /* 申请达人 */
+    /* 申请达人 */
   }
   .pc nav #outer .content {
     display: none;
@@ -97,6 +106,12 @@
   }
   .pc nav #outer .content .content_noe .choice_noe button {
     margin-left: 20px;
+  }
+  .pc nav #outer .content .menu_01 {
+    /* 管理员列表操作字体剧中 */
+  }
+  .pc nav #outer .content .menu_01 .laytable-cell-1-score {
+    text-align: center;
   }
   .pc nav #outer .content .add_administrator {
     background: #fff;
@@ -180,8 +195,8 @@
   .pc nav #outer .content_02 {
     width: 100%;
     position: relative;
-    height: 100vh;
     border-top: 1px solid #eee;
+    /* 数据列表 */
     /* 角色设计-添加角色页面 */
     /* input框 */
     /* 菜单 */
@@ -203,6 +218,9 @@
   .pc nav #outer .content_02 #content_02_form .btn_submit_two {
     float: left;
     margin-left: 20px;
+  }
+  .pc nav #outer .content_02 .menu_02 .laytable-cell-2-score span {
+    padding-left: 50px;
   }
   .pc nav #outer .content_02 .add_role {
     width: 100%;
@@ -253,7 +271,6 @@
   }
   .pc nav #outer .content_03 {
     width: 100%;
-    height: 100vh;
     border-top: 1px solid #eee;
   }
   .pc nav #outer .content_03 #form_diary {
@@ -264,7 +281,255 @@
   }
   .pc nav #outer .content_04 {
     width: 100%;
-    height: 100vh;
+  }
+  .pc nav #outer .content_04 #form_user {
+    height: 38px;
+  }
+  .pc nav #outer .content_04 #form_user .user_label {
+    padding: 9px 0px;
+    text-align: center;
+  }
+  .pc nav #outer .content_04 #form_user .layui-input-inline {
+    float: left;
+    display: flex;
+  }
+  .pc nav #outer .content_04 #form_user .layui-input-inline input {
+    width: 168px;
+  }
+  .pc nav #outer .content_04 #form_user .layui-input-inline .but_user {
+    margin-left: 20px;
+  }
+  .pc nav #outer .content_05 {
+    width: 100%;
+  }
+  .pc nav #outer .content_05 #form_labels {
+    height: 38px;
+  }
+  .pc nav #outer .content_05 #form_labels .labels_label {
+    padding: 9px 0px;
+    text-align: center;
+  }
+  .pc nav #outer .content_05 #form_labels .layui-input-inline {
+    float: left;
+    display: flex;
+  }
+  .pc nav #outer .content_05 #form_labels .layui-input-inline input {
+    width: 168px;
+  }
+  .pc nav #outer .content_05 #form_labels .layui-input-inline .but_user {
+    margin-left: 20px;
+  }
+  .pc nav #outer .content_05 #form_labels .layui-input-inline .but_user_02 {
+    margin-left: 10px;
+  }
+  .pc nav #outer .content_06 {
+    width: 100%;
+    /* 缩略图 */
+  }
+  .pc nav #outer .content_06 #form_topic {
+    height: 38px;
+  }
+  .pc nav #outer .content_06 #form_topic .topic_label {
+    padding: 9px 0px;
+    text-align: center;
+  }
+  .pc nav #outer .content_06 #form_topic .layui-input-inline {
+    float: left;
+    display: flex;
+  }
+  .pc nav #outer .content_06 #form_topic .layui-input-inline input {
+    width: 168px;
+  }
+  .pc nav #outer .content_06 #form_topic .but_topic {
+    margin-left: 20px;
+  }
+  .pc nav #outer .content_06 #form_topic .but_topic_02 {
+    margin-left: 10px;
+  }
+  .pc nav #outer .content_06 .topic_list .layui-border-box .layui-table-box .layui-table-main table tbody tr .layui-table-cell .layui-form-item {
+    width: 52px;
+    height: 30px;
+  }
+  .pc nav #outer .content_06 .topic_list .layui-border-box .layui-table-box .layui-table-main table tbody tr .layui-table-cell .layui-form-item img {
+    width: 100%;
+    height: 100%;
+  }
+  .pc nav #outer .content_07 {
+    width: 100%;
+  }
+  .pc nav #outer .content_07 #form_category {
+    height: 38px;
+  }
+  .pc nav #outer .content_07 #form_category .category_label {
+    padding: 9px 0px;
+    text-align: center;
+  }
+  .pc nav #outer .content_07 #form_category .layui-input-inline {
+    float: left;
+    display: flex;
+  }
+  .pc nav #outer .content_07 #form_category .layui-input-inline input {
+    width: 168px;
+  }
+  .pc nav #outer .content_07 #form_category .but_category {
+    margin-left: 20px;
+  }
+  .pc nav #outer .content_07 #form_category .but_category_02 {
+    margin-left: 10px;
+  }
+  .pc nav #outer .content_08 {
+    width: 100%;
+  }
+  .pc nav #outer .content_08 #form_brand {
+    height: 38px;
+  }
+  .pc nav #outer .content_08 #form_brand .brand_label {
+    padding: 9px 0px;
+    text-align: center;
+  }
+  .pc nav #outer .content_08 #form_brand .layui-input-inline {
+    float: left;
+    display: flex;
+  }
+  .pc nav #outer .content_08 #form_brand .layui-input-inline input {
+    width: 168px;
+  }
+  .pc nav #outer .content_08 #form_brand .but_brand {
+    margin-left: 20px;
+  }
+  .pc nav #outer .content_08 #form_brand .but_brand_02 {
+    margin-left: 10px;
+  }
+  .pc nav #outer .content_09 {
+    width: 100%;
+  }
+  .pc nav #outer .content_09 #form_Series {
+    height: 38px;
+  }
+  .pc nav #outer .content_09 #form_Series .Series_label {
+    padding: 9px 0px;
+    text-align: center;
+  }
+  .pc nav #outer .content_09 #form_Series .layui-input-inline {
+    float: left;
+    display: flex;
+  }
+  .pc nav #outer .content_09 #form_Series .layui-input-inline input {
+    width: 168px;
+  }
+  .pc nav #outer .content_09 #form_Series .but_Series {
+    margin-left: 20px;
+  }
+  .pc nav #outer .content_09 #form_Series .but_Series_02 {
+    margin-left: 10px;
+  }
+  .pc nav #outer .content_10 {
+    width: 100%;
+  }
+  .pc nav #outer .content_10 #form_hot {
+    height: 38px;
+  }
+  .pc nav #outer .content_10 #form_hot .hot_label {
+    padding: 9px 0px;
+    text-align: center;
+  }
+  .pc nav #outer .content_10 #form_hot .layui-input-inline {
+    float: left;
+    display: flex;
+  }
+  .pc nav #outer .content_10 #form_hot .layui-input-inline input {
+    width: 168px;
+  }
+  .pc nav #outer .content_10 #form_hot .but_hot {
+    margin-left: 20px;
+  }
+  .pc nav #outer .content_10 #form_hot .but_hot_02 {
+    margin-left: 10px;
+  }
+  .pc nav #outer .content_11 {
+    width: 100%;
+    /* 缩略图 */
+  }
+  .pc nav #outer .content_11 #form_advertising {
+    height: 38px;
+  }
+  .pc nav #outer .content_11 #form_advertising .advertising_label {
+    padding: 9px 0px;
+    text-align: center;
+  }
+  .pc nav #outer .content_11 #form_advertising .layui-input-inline {
+    float: left;
+    display: flex;
+  }
+  .pc nav #outer .content_11 #form_advertising .layui-input-inline input {
+    width: 168px;
+  }
+  .pc nav #outer .content_11 #form_advertising .but_advertising {
+    margin-left: 20px;
+  }
+  .pc nav #outer .content_11 #form_advertising .but_advertising_02 {
+    margin-left: 10px;
+  }
+  .pc nav #outer .content_11 .advertising_list .layui-border-box .layui-table-box .layui-table-main table tbody tr .layui-table-cell .layui-form-item {
+    width: 52px;
+    height: 30px;
+  }
+  .pc nav #outer .content_11 .advertising_list .layui-border-box .layui-table-box .layui-table-main table tbody tr .layui-table-cell .layui-form-item img {
+    width: 100%;
+    height: 100%;
+  }
+  .pc nav #outer .content_12 {
+    width: 100%;
+  }
+  .pc nav #outer .content_12 #form_applyExpert {
+    height: 38px;
+  }
+  .pc nav #outer .content_12 #form_applyExpert .applyExpert_label {
+    padding: 9px 0px;
+    text-align: center;
+  }
+  .pc nav #outer .content_12 #form_applyExpert .layui-input-inline {
+    float: left;
+    display: flex;
+  }
+  .pc nav #outer .content_12 #form_applyExpert .layui-input-inline input {
+    width: 168px;
+  }
+  .pc nav #outer .content_12 #form_applyExpert .but_applyExpert {
+    margin-left: 20px;
+  }
+  .pc nav #outer .content_13 {
+    width: 100%;
+    /* 缩略图 */
+  }
+  .pc nav #outer .content_13 #form_Po {
+    height: 38px;
+  }
+  .pc nav #outer .content_13 #form_Po .Po_label {
+    width: 50px;
+    padding: 9px 0px;
+    text-align: center;
+  }
+  .pc nav #outer .content_13 #form_Po .layui-input-inline {
+    float: left;
+    display: flex;
+  }
+  .pc nav #outer .content_13 #form_Po .layui-input-inline input {
+    width: 120px;
+  }
+  .pc nav #outer .content_13 #form_Po .but_Po {
+    margin-left: 20px;
+  }
+  .pc nav #outer .content_13 #form_Po .but_Po_02 {
+    margin-left: 10px;
+  }
+  .pc nav #outer .content_13 .Po_list .layui-border-box .layui-table-box .layui-table-main table tbody tr .layui-table-cell .layui-form-item {
+    width: 52px;
+    height: 30px;
+  }
+  .pc nav #outer .content_13 .Po_list .layui-border-box .layui-table-box .layui-table-main table tbody tr .layui-table-cell .layui-form-item img {
+    width: 100%;
+    height: 100%;
   }
   .pc .crumbs {
     height: 50px;

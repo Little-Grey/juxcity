@@ -32,10 +32,10 @@
         </header>
 
         <!-- 导航 -->
-        <nav>
+        <nav class="layui-side-scroll">
             <ul class="layui-nav layui-nav-tree nav_ul" lay-filter="test">
                 <!-- 管理员管理 -->
-                <li class="layui-nav-item layui-nav-itemed">
+                <li class="layui-nav-item">
                     <a href="javascript:;">管理员管理</a>
                     <dl class="layui-nav-child">
                         <dd setIndex="1" class="layui-this">
@@ -50,7 +50,7 @@
                     </dl>
                 </li>
                 <!-- 业务管理 -->
-                <li class="layui-nav-item layui-nav-itemed">
+                <li class="layui-nav-item">
                     <a href="javascript:;">业务管理</a>
                     <dl class="layui-nav-child">
                         <dd setIndex="4">
@@ -83,7 +83,7 @@
                     </dl>
                 </li>
                 <!-- 内容管理 -->
-                <li class="layui-nav-item">
+                <li class="layui-nav-item layui-nav-itemed">
                     <a href="javascript:;">内容管理</a>
                     <dl class="layui-nav-child">
                         <dd setIndex="13">
@@ -177,8 +177,10 @@
                         </div>
                     </form>
                     <!-- 表单系列 -->
-                    <div class="menu">
+                    <div class="menu_01">
                         <table id="demo" lay-filter="test"></table>
+                        <!-- 分页 -->
+                        <!-- <div id="test1"></div> -->
                     </div>
                     <!-- 新增管理员页面 -->
                     <div class="add_administrator">
@@ -247,8 +249,8 @@
                             <button type="button" class="layui-btn part" lay-submit lay-filter="formDemo">增加角色</button>
                         </div>
                     </form>
-                    <!-- 列表 -->
-                    <div>
+                    <!-- 数据列表 -->
+                    <div class="menu_02">
                         <table id="role" lay-filter="test"></table>
                     </div>
                     <!-- 角色设计-添加角色页面 -->
@@ -414,28 +416,435 @@
 
                 </div>
                 <!-- 用户管理 -->
-                <div class="content content_04">我是第4页内容</div>
-                <div class="content">我是第5页内容</div>
-                <div class="content">我是第6页内容</div>
-                <div class="content">我是第7页内容</div>
-                <div class="content">我是第8页内容</div>
-                <div class="content">我是第9页内容</div>
-                <div class="content">我是第10页内容</div>
-                <div class="content">我是第11页内容</div>
-                <div class="content">我是第12页内容</div>
-                <div class="content">我是第13页内容</div>
-                <div class="content">我是第14页内容</div>
-                <div class="content">我是第15页内容</div>
-                <div class="content">我是第16页内容</div>
-                <div class="content">我是第17页内容</div>
-                <div class="content">我是第18页内容</div>
-                <div class="content">我是第19页内容</div>
-                <div class="content">我是第20页内容</div>
-                <div class="content">我是第21页内容</div>
-                <div class="content">我是第22页内容</div>
-                <div class="content">我是第23页内容</div>
-                <div class="content">我是第24页内容</div>
+                <div class="content content_04">
+                    <form action="" class="layui-form" id="form_user">
+                        <label class="layui-form-label user_label">状态</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">启用</option>
+                                <option value="2">禁用</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label user_label">达人</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">无</option>
+                                <option value="2">普通达人</option>
+                                <option value="3">官方达人</option>
+                                <option value="4">申请中</option>
+                                <option value="5">申请失败</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label user_label">昵称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                            <!-- 搜索按钮 -->
+                            <!-- <div class="btn_submit_two"> -->
+                            <button type="button" class="layui-btn but_user" lay-submit lay-filter="formDemo">搜索</button>
+                            <!-- </div> -->
+                        </div>
+                    </form>
+                    <!-- 用户管理数据列表 -->
+                    <div class="user_list">
+                        <table id="user_list" lay-filter="test"></table>
+                    </div>
 
+
+
+                </div>
+                <!-- 标签管理 -->
+                <div class="content content_05">
+                    <form action="" class="layui-form" id="form_labels">
+                        <label class="layui-form-label labels_label">状态</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">启用</option>
+                                <option value="2">禁用</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label labels_label">达人</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">无</option>
+                                <option value="2">普通达人</option>
+                                <option value="3">官方达人</option>
+                                <option value="4">申请中</option>
+                                <option value="5">申请失败</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label labels_label">官方</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">官方</option>
+                                <option value="2">非官方</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label labels_label">推荐</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">推荐</option>
+                                <option value="2">非推荐</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label labels_label">昵称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                            <!-- 搜索按钮 -->
+                            <button type="button" class="layui-btn but_user" lay-submit lay-filter="formDemo">搜索</button>
+                            <!-- 新增按钮 -->
+                            <button type="button" class="layui-btn but_user_02" lay-submit lay-filter="formDemo">新增标签</button>
+                        </div>
+                    </form>
+                    <!-- 标签管理数据列表 -->
+                    <div class="labels_list">
+                        <table id="labels_list" lay-filter="test"></table>
+                    </div>
+
+
+
+                </div>
+                <!-- 话题管理 -->
+                <div class="content content_06">
+                    <form action="" class="layui-form" id="form_topic">
+                        <label class="layui-form-label topic_label">状态</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">启用</option>
+                                <option value="2">禁用</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label topic_label">达人</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">无</option>
+                                <option value="2">普通达人</option>
+                                <option value="3">官方达人</option>
+                                <option value="4">申请中</option>
+                                <option value="5">申请失败</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label topic_label">昵称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                        </div>
+                        <!-- 搜索按钮 -->
+                        <button type="button" class="layui-btn but_topic" lay-submit lay-filter="formDemo">搜索</button>
+                        <!-- 新增按钮 -->
+                        <button type="button" class="layui-btn but_topic_02" lay-submit lay-filter="formDemo">新增话题</button>
+                    </form>
+
+                    <!-- 话题管理数据列表 -->
+                    <div class="topic_list">
+                        <table id="topic_list" lay-filter="test"></table>
+                    </div>
+
+
+
+                </div>
+                <!-- 类目管理 -->
+                <div class="content content_07">
+                    <form action="" class="layui-form" id="form_category">
+                        <label class="layui-form-label category_label">状态</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">启用</option>
+                                <option value="2">禁用</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label category_label">达人</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">护肤</option>
+                                <option value="2">底妆</option>
+                                <option value="3">眼妆</option>
+                                <option value="4">眉毛</option>
+                                <option value="5">唇部</option>
+                                <option value="6">清洁</option>
+                                <option value="7">面膜类</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label category_label">昵称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                        </div>
+                        <!-- 搜索按钮 -->
+                        <button type="button" class="layui-btn but_category" lay-submit lay-filter="formDemo">搜索</button>
+                        <!-- 新增按钮 -->
+                        <button type="button" class="layui-btn but_category_02" lay-submit lay-filter="formDemo">新增类目</button>
+
+                    </form>
+                    <!-- 类目管理据列表 -->
+                    <div class="category_list">
+                        <table id="category_list" lay-filter="test"></table>
+                    </div>
+                </div>
+                <!-- 品牌管理 -->
+                <div class="content content_08">
+                    <form action="" class="layui-form" id="form_brand">
+                        <label class="layui-form-label brand_label">状态</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">启用</option>
+                                <option value="2">禁用</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label brand_label">官方</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">官方</option>
+                                <option value="2">非官方</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label brand_label">类目</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">护肤</option>
+                                <option value="2">精华</option>
+                                <option value="3">眼霜</option>
+                                <option value="4">面膜</option>
+                                <option value="5">乳液/凝胶</option>
+                                <option value="6">爽肤水</option>
+                                <option value="7">修护霜</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label brand_label">昵称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                        </div>
+                        <!-- 搜索按钮 -->
+                        <button type="button" class="layui-btn but_brand" lay-submit lay-filter="formDemo">搜索</button>
+                        <!-- 新增按钮 -->
+                        <button type="button" class="layui-btn but_brand_02" lay-submit lay-filter="formDemo">新增品牌</button>
+
+                    </form>
+                    <!-- 品牌管理据列表 -->
+                    <div class="brand_list">
+                        <table id="brand_list" lay-filter="test"></table>
+                    </div>
+                </div>
+                <!-- 品牌系列管理 -->
+                <div class="content content_09">
+                    <form action="" class="layui-form" id="form_Series">
+                        <label class="layui-form-label Series_label">状态</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">启用</option>
+                                <option value="2">禁用</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label Series_label">官方</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">官方</option>
+                                <option value="2">非官方</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label Series_label">类目</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">OSM欧诗漫</option>
+                                <option value="2">PRETALE瞳话</option>
+                                <option value="3">盼丽风姿</option>
+                                <option value="4">REVITAL悦薇</option>
+                                <option value="5">京卫本草</option>
+                                <option value="6">L\'Artisan 阿蒂仙</option>
+                                <option value="7">RANCE兰斯</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label Series_label">昵称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                        </div>
+                        <!-- 搜索按钮 -->
+                        <button type="button" class="layui-btn but_Series" lay-submit lay-filter="formDemo">搜索</button>
+                        <!-- 新增按钮 -->
+                        <button type="button" class="layui-btn but_Series_02" lay-submit lay-filter="formDemo">新增品牌</button>
+
+                    </form>
+                    <!-- 品牌管理据列表 -->
+                    <div class="Series_list">
+                        <table id="Series_list" lay-filter="test"></table>
+                    </div>
+                </div>
+                <!-- 搜索热词管理 -->
+                <div class="content content_10">
+                    <form action="" class="layui-form" id="form_hot">
+                        <label class="layui-form-label hot_label">状态</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">启用</option>
+                                <option value="2">禁用</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label hot_label">昵称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                        </div>
+                        <!-- 搜索按钮 -->
+                        <button type="button" class="layui-btn but_hot" lay-submit lay-filter="formDemo">搜索</button>
+                        <!-- 新增按钮 -->
+                        <button type="button" class="layui-btn but_hot_02" lay-submit lay-filter="formDemo">搜索热词</button>
+                    </form>
+                    <!-- 搜索热词管理据列表- - - 还没有写数据,commonjs里买呢还没有创建实力化 -->
+                    <div class="hot_list">
+                        <table id="hot_list" lay-filter="test"></table>
+                    </div>
+                </div>
+                <!-- 广告管理 -->
+                <div class="content content_11">
+                    <form action="" class="layui-form" id="form_advertising">
+                        <label class="layui-form-label advertising_label">状态</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">启用</option>
+                                <option value="2">禁用</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label advertising_label">位置</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">耳圈顶部</option>
+                                <option value="2">耳圈中部</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label advertising_label">类型</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">未定义</option>
+                                <option value="2">网页</option>
+                                <option value="3">PO图</option>
+                                <option value="4">问答</option>
+                                <option value="5">视频</option>
+                                <option value="6">日记</option>
+                                <option value="7">圈子</option>
+                                <option value="8">官方评测</option>
+                            </select>
+                        </div>
+                        <!-- 搜索按钮 -->
+                        <button type="button" class="layui-btn but_advertising" lay-submit lay-filter="formDemo">搜索</button>
+                        <!-- 新增按钮 -->
+                        <button type="button" class="layui-btn but_advertising_02" lay-submit lay-filter="formDemo">新增广告</button>
+                    </form>
+                    <!-- 广告管理据列表 -->
+                    <div class="advertising_list">
+                        <table id="advertising_list" lay-filter="test"></table>
+                    </div>
+                </div>
+                <!-- 申请达人- - - 还没有写数据,commonjs里买呢还没有创建实力化  -->
+                <div class="content content_12">
+                    <form action="" class="layui-form" id="form_applyExpert">
+                        <label class="layui-form-label applyExpert_label">昵称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                        </div>
+                        <!-- 搜索按钮 -->
+                        <button type="button" class="layui-btn but_applyExpert" lay-submit lay-filter="formDemo">搜索</button>
+                    </form>
+                </div>
+                <!-- PO图 -->
+                <div class="content content_13">
+                    <form action="" class="layui-form" id="form_Po">
+                        <label class="layui-form-label Po_label">状态</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">启用</option>
+                                <option value="2">禁用</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label Po_label">推荐</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">推荐</option>
+                                <option value="2">非推荐</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label Po_label">类目</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1"> ├ 精华</option>
+                                <option value="2"> ├ 眼霜</option>
+                                <option value="3"> ├ 面霜</option>
+                                <option value="4"> ├ 乳液/凝胶</option>
+                                <option value="5"> ├ 爽肤水</option>
+                                <option value="6"> ├ 修护霜</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label Po_label">品牌</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">OSM欧诗漫</option>
+                                <option value="2">PRETALE瞳话</option>
+                                <option value="3">盼丽风姿</option>
+                                <option value="4">REVITAL悦薇</option>
+                                <option value="5">京卫本草</option>
+                                <option value="6">L\'Artisan 阿蒂仙</option>
+                                <option value="7">RANCE兰斯</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label Po_label">用户昵称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                        </div>
+                        <label class="layui-form-label Po_label">关键字</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                        </div>
+                        <!-- 搜索按钮 -->
+                        <button type="button" class="layui-btn but_Po" lay-submit lay-filter="formDemo">搜索</button>
+                        <!-- 新增按钮 -->
+                        <button type="button" class="layui-btn but_Po_02" lay-submit lay-filter="formDemo">新增PO图</button>
+                    </form>
+                    <!-- PO图.据列表 -->
+                    <div class="Po_list">
+                        <table id="Po_list" lay-filter="test"></table>
+                    </div>
+                </div>
+                <!-- 问答 -->
+                <div class="content">我是第14页内容</div>
+                <!-- 视频 -->
+                <div class="content">我是第15页内容</div>
+                <!-- 日记 -->
+                <div class="content">我是第16页内容</div>
+                <!-- 评论管理 -->
+                <div class="content">我是第17页内容</div>
+                <!-- 回复管理 -->
+                <div class="content">我是第18页内容</div>
+                <!-- 产品统计 -->
+                <div class="content">我是第19页内容</div>
+                <!-- 渠道管理 -->
+                <div class="content">我是第20页内容</div>
+                <!-- 版本管理 -->
+                <div class="content">我是第21页内容</div>
+                <!-- 数据表优化 -->
+                <div class="content">我是第22页内容</div>
+                <!-- 阿里云OSS资源 -->
+                <div class="content">我是第23页内容</div>
+                <!-- 错误报告 -->
+                <div class="content">我是第24页内容</div>
             </div>
 
             <!-- 面包屑 -->
@@ -463,10 +872,12 @@
 
 
 
-    <!-- 下述是templet对应的模板，它可以存放在页面的任意位置。模板遵循于 laytpl 语法，可读取到返回的所有数据 -->
     <!-- 先对来说,就是templet模版引擎 -->
+
+    <!-- 管理设置,状态按钮的模版 -->
     <script type="text/html" id="titleTpl">
-        {{# if(d.tests==1){ }}<!-- tests这个id,就系json文件里定义的 -->
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
         <form action="" class="layui-form">
             <div class="layui-form-item">
                 <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
@@ -482,139 +893,637 @@
         {{# } }}
     </script>
 
+    <!-- 管理设置,编辑按钮的模版 -->
+    <script type="text/html" id="btn_management">
+        <!-- <form action="" class="layui-form"> -->
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+            <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
+        </div>
+        <!-- </form> -->
+    </script>
+
+    <!-- 角色设置的模版 -->
+    <script type="text/html" id="btn_role">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+            <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
+        </div>
+    </script>
+
+    <!-- 用户管理模版-状态 -->
+    <script type="text/html" id="btn_state_01">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 用户管理模版-操作 -->
+    <script type="text/html" id="btn_handle_01">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+        </div>
+    </script>
+
+    <!-- 标签管理-热门 -->
+    <script type="text/html" id="btn_hot_01">
+        {{# if(d.tests_01==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 标签管理-推荐 -->
+    <script type="text/html" id="btn_recommend_01">
+        {{# if(d.tests_01==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 标签管理-官方 -->
+    <script type="text/html" id="btn_official_01">
+        {{# if(d.tests_01==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 标签管理-状态 -->
+    <script type="text/html" id="btn_state_02">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 标签管理-操作 -->
+    <script type="text/html" id="btn_handle_02">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+        </div>
+    </script>
+
+
+    <!-- 话题管理-缩略图 -->
+    <script type="text/html" id="topic_thumbnail">
+        <div class="layui-form-item">
+            <img src="{{ d.img}}">
+        </div>
+    </script>
+    <!-- 话题管理-封面图 -->
+    <script type="text/html" id="topic_cover">
+        <div class="layui-form-item">
+            <img src="{{ d.img}}">
+        </div>
+    </script>
+    <!-- 话题管理-推荐 -->
+    <script type="text/html" id="btn_recommend_02">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="推荐|推荐" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="推荐|推荐" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 话题管理-状态 -->
+    <script type="text/html" id="btn_state_03">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 话题管理-操作 -->
+    <script type="text/html" id="btn_handle_03">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+            <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
+        </div>
+    </script>
+
+    <!-- 类目管理-状态 -->
+    <script type="text/html" id="btn_state_04">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 类目管理-操作 -->
+    <script type="text/html" id="btn_handle_04">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+            <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
+        </div>
+    </script>
+
+    <!-- 品牌管理-官方 -->
+    <script type="text/html" id="btn_official_02">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="官方|官方" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="官方|官方" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 品牌管理-状态 -->
+    <script type="text/html" id="btn_state_05">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 品牌管理-操作 -->
+    <script type="text/html" id="btn_handle_05">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+            <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
+        </div>
+    </script>
+
+    <!-- 品牌系列管理-官方 -->
+    <script type="text/html" id="btn_official_03">
+        {{# if(d.tests_01==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="官方|官方" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="官方|官方" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 品牌系列管理-状态 -->
+    <script type="text/html" id="btn_state_06">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 品牌系列管理-操作 -->
+    <script type="text/html" id="btn_handle_06">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+            <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
+        </div>
+    </script>
+
+    <!-- 广告管理-图片 -->
+    <script type="text/html" id="advertising_img">
+        <div class="layui-form-item">
+            <img src="{{ d.img}}">
+        </div>
+    </script>
+    <!-- 广告管理-状态 -->
+    <script type="text/html" id="btn_state_07">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 广告管理-操作 -->
+    <script type="text/html" id="btn_handle_07">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+            <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
+        </div>
+    </script>
+
+    <!-- PO图-用户昵称 -->
+    <script type="text/html" id="Po_img_01">
+        <div class="layui-form-item">
+            <img src="{{ d.img}}"><span>{{d.sex}}</span>
+        </div>
+    </script>
+    <!-- PO图-图片 -->
+    <script type="text/html" id="Po_img_02">
+        <div class="layui-form-item">
+            <img src="{{ d.img}}"><span>{{d.wealth}}</span>
+        </div>
+    </script>
+    <!-- PO图-状态 -->
+    <script type="text/html" id="btn_state_08">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- PO图-操作 -->
+    <script type="text/html" id="btn_handle_08">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">评论</i>
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+            <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
+        </div>
+    </script>
 
 
     <!-- 引入jquery -->
     <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
     <script src="./layui/layui.js"></script>
+    <script src="./common/common.js"></script>
     <script src="./js/index.js"></script>
+    <!-- 下面这些数据,全部在公共js里 -->
     <script>
-        // 初始化
-        layui.use(['element', 'form', 'table'], function () {
-            var element = layui.element;
-            var form = layui.form;
-            var table = layui.table;
+        // // 初始化
+        // layui.use(['element', 'form', 'table', 'laypage'], function () {
+        //     var element = layui.element;
+        //     var form = layui.form;
+        //     var table = layui.table;
+        //     var laypage = layui.laypage;
 
-            //一些事件监听
-            element.on('tab(demo)', function (data) {
-                console.log(data);
-            });
+        //     //一些事件监听
+        //     element.on('tab(demo)', function (data) {
+        //         console.log(data);
+        //     });
+        //     //执行一个laypage实例---分页;管理员设置
+        //     // laypage.render({
+        //     //     elem: 'test1' //注意，这里的 test1 是 ID，不用加 # 号
+        //     //         ,
+        //     //     count: 50 //数据总数，从服务端得到
+        //     // });
 
-            //第一个实例
-            table.render({
-                elem: '#demo',
-                height: '315px',
-                url: './test.json',
-                page: true, //开启分页
-                skin: 'nob', //无边框
-                cols: [
-                    [ //表头
-                        {
-                            field: 'id',
-                            title: '账号',
-                            width: 160,
-                            fixed: 'left'
-                        }, {
-                            field: 'username',
-                            title: '角色',
-                            width: 160
-                        }, {
-                            field: 'sex',
-                            title: '注册时间',
-                            width: 160,
-                            sort: true
-                        }, {
-                            field: 'city',
-                            title: '最后登陆时间',
-                            width: 160,
-                            sort: true,
-                        }, {
-                            field: 'sign',
-                            title: '最后ip',
-                            width: 160
-                        }, {
-                            field: 'experience',
-                            title: '状态',
-                            width: 160,
-                            sort: true,
-                            templet: '#titleTpl'//添加了模版引擎的数据,添加了按钮
-                        }, {
-                            field: 'score',
-                            title: '操作',
-                            width: 160
-                        }
-                    ]
-                ],
-                // done: function (res, curr, count) {
-                //     console.log(res);
-                //     if (res.data[0].experience == 1) {
-                //         // $('p').after('<a>http</a >');
-                //         $('.laytable-cell-1-experience').append(
-                //             '<form action="" class="layui-form"><div class="layui-form-item"><input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用"></div></form>'
-                //         )
-                //     }
-                // }
-                done: function (res, curr, count) {
-                    console.log(res);
-                }
-            });
-            // 角色,数据第二个实例化
-            table.render({
-                elem: '#role',
-                height: '315px',
-                // url: './test.json',
-                url: './test.json',
-                // typeDate:'json',
-                page: true, //开启分页
-                skin: 'nob', //无边框
-                cols: [
-                    [ //表头
-                        {
-                            field: 'id',
-                            title: '名称',
-                            width: '50%',
-                            fixed: 'left'
-                        }, {
-                            field: 'score',
-                            title: '操作',
-                            width: '50%'
-                        }
-                    ]
-                ]
-            });
-            //管理员日记,第三个数据列表实例化
-            table.render({
-                elem: '#diary_lists',
-                height: '315px',
-                // url: './test.json',
-                url: './test.json',
-                // typeDate:'json',
-                page: true, //开启分页
-                skin: 'nob', //无边框
-                cols: [
-                    [ //表头
-                        {
-                            field: 'id',
-                            title: '管理员',
-                            width: '25%',
-                        }, {
-                            field: 'experience',
-                            title: '时间',
-                            width: '25%',
-                            sort: true
-                        }, {
-                            field: 'score',
-                            title: 'IP',
-                            width: '25%'
-                        }, {
-                            field: 'score',
-                            title: '备注',
-                            width: '25%'
-                        }
-                    ]
-                ]
-            });
-        })
+        //     //第一个实例
+        //     table.render({
+        //         elem: '#demo',
+        //         height: '460px',
+        //         url: './test.json',
+        //         // url: 'http://www.layui.com/demo/table/user/?page=1&limit=30',
+        //         page: true, //开启分页
+        //         skin: 'nob', //无边框
+        //         limit: 10, //等又了后台,这里显示当前每页中数据的条数
+        //         count: 2000, //page指的是当前页码
+        //         cols: [
+        //             [ //表头
+        //                 {
+        //                     field: 'id',
+        //                     title: '账号',
+        //                     width: 160
+        //                 }, {
+        //                     field: 'username',
+        //                     title: '角色',
+        //                     width: 160
+        //                 }, {
+        //                     field: 'sex',
+        //                     title: '注册时间',
+        //                     width: 160,
+        //                     sort: true
+        //                 }, {
+        //                     field: 'city',
+        //                     title: '最后登陆时间',
+        //                     width: 160,
+        //                     sort: true,
+        //                 }, {
+        //                     field: 'sign',
+        //                     title: '最后ip',
+        //                     width: 160
+        //                 }, {
+        //                     field: 'experience',
+        //                     title: '状态',
+        //                     width: 160,
+        //                     sort: true,
+        //                     templet: '#titleTpl' //添加了模版引擎的数据,添加了按钮
+        //                 }, {
+        //                     field: 'score',
+        //                     title: '操作',
+        //                     width: 160,
+        //                     templet: '#btn_management'
+        //                 }
+        //             ]
+        //         ],
+        //         request: {
+        //             pageName: 'page' //页码的参数名称，默认：page
+        //                 ,
+        //             limitName: 'limit' //每页数据量的参数名，默认：limit
+        //         }
+
+        //     });
+        //     // 角色,数据第二个实例化
+        //     table.render({
+        //         elem: '#role',
+        //         height: '460px',
+        //         url: './test.json',
+        //         // url: 'http://www.layui.com/demo/table/user/?page=1&limit=30',
+        //         page: true, //开启分页
+        //         skin: 'nob', //无边框
+        //         limit: 10, //等又了后台,这里显示当前每页中数据的条数
+        //         count: 2000, //page指的是当前页码
+        //         cols: [
+        //             [ //表头
+        //                 {
+        //                     field: 'id',
+        //                     title: '名称',
+        //                     width: '50%',
+
+        //                 }, {
+        //                     field: 'score',
+        //                     title: '操作',
+        //                     width: '50%',
+        //                     templet: '#btn_role'
+        //                 }
+        //             ]
+        //         ]
+        //     });
+        //     //管理员日记,第三个数据列表实例化
+        //     table.render({
+        //         elem: '#diary_lists',
+        //         height: '460px',
+        //         url: './test.json',
+        //         // url: 'http://www.layui.com/demo/table/user/?page=1&limit=30',
+        //         page: true, //开启分页
+        //         skin: 'nob', //无边框
+        //         limit: 10, //等又了后台,这里显示当前每页中数据的条数
+        //         count: 2000, //page指的是当前页码
+        //         cols: [
+        //             [ //表头
+        //                 {
+        //                     field: 'id',
+        //                     title: '管理员',
+        //                     width: '25%',
+        //                 }, {
+        //                     field: 'experience',
+        //                     title: '时间',
+        //                     width: '25%',
+        //                     sort: true
+        //                 }, {
+        //                     field: 'score',
+        //                     title: 'IP',
+        //                     width: '25%'
+        //                 }, {
+        //                     field: 'score',
+        //                     title: '备注',
+        //                     width: '25%'
+        //                 }
+        //             ]
+        //         ]
+        //     });
+        //     // 用户管理数据列表实例话
+        //     table.render({
+        //         elem: '#user_list',
+        //         height: '460px',
+        //         url: './test.json',
+        //         // url: 'http://www.layui.com/demo/table/user/?page=1&limit=30',
+        //         page: true, //开启分页
+        //         skin: 'nob', //无边框
+        //         limit: 10, //等又了后台,这里显示当前每页中数据的条数
+        //         count: 2000, //page指的是当前页码
+        //         cols: [
+        //             [ //表头
+        //                 {
+        //                     field: 'id',
+        //                     title: '昵称',
+        //                     width: 142,
+        //                 }, {
+        //                     field: 'username',
+        //                     title: '性别',
+        //                     width: 142
+        //                 }, {
+        //                     field: 'sex',
+        //                     title: '等级/经验值',
+        //                     width: 142,
+        //                 }, {
+        //                     field: 'city',
+        //                     title: '达人',
+        //                     width: 142
+        //                 }, {
+        //                     field: 'sign',
+        //                     title: '个性签名',
+        //                     width: 142
+        //                 }, {
+        //                     field: 'experience',
+        //                     title: '注册时间',
+        //                     width: 142,
+        //                     sort: true
+        //                 }, {
+        //                     field: 'score',
+        //                     title: '最后登录时间',
+        //                     width: 142,
+        //                     sort: true
+        //                 }, {
+        //                     field: 'classify',
+        //                     title: '最后登录IP',
+        //                     width: 142
+        //                 }, {
+        //                     field: 'wealth',
+        //                     title: '状态',
+        //                     width: 142,
+        //                     sort: true,
+        //                     templet: '#btn_state_01'
+        //                 }, {
+        //                     field: 'wealth',
+        //                     title: '操作',
+        //                     width: 142,
+        //                     templet: '#btn_handle_01'
+        //                 }
+        //             ]
+        //         ]
+        //     });
+        //     // 标签管理
+        //     table.render({
+        //         elem: '#labels_list',
+        //         height: '460px',
+        //         url: './test.json',
+        //         // url: 'http://www.layui.com/demo/table/user/?page=1&limit=30',
+        //         page: true, //开启分页
+        //         skin: 'nob', //无边框
+        //         limit: 10, //等又了后台,这里显示当前每页中数据的条数
+        //         count: 2000, //page指的是当前页码
+        //         cols: [
+        //             [ //表头
+        //                 {
+        //                     field: 'id',
+        //                     title: '名称',
+        //                     width: 142,
+        //                 }, {
+        //                     field: 'username',
+        //                     title: '引用次数',
+        //                     width: 142,
+        //                     sort: true
+        //                 }, {
+        //                     field: 'sex',
+        //                     title: '热门',
+        //                     width: 142,
+        //                     sort: true
+        //                 }, {
+        //                     field: 'city',
+        //                     title: '热门排序',
+        //                     width: 142,
+        //                     sort: true
+        //                 }, {
+        //                     field: 'sign',
+        //                     title: '推荐',
+        //                     width: 142,
+        //                     sort: true
+        //                 }, {
+        //                     field: 'experience',
+        //                     title: '推荐排序',
+        //                     width: 142,
+        //                     sort: true
+        //                 }, {
+        //                     field: 'score',
+        //                     title: '官方',
+        //                     width: 142,
+        //                     sort: true
+        //                 }, {
+        //                     field: 'classify',
+        //                     title: '添加时间',
+        //                     width: 142
+        //                 }, {
+        //                     field: 'wealth',
+        //                     title: '状态',
+        //                     width: 142,
+        //                     sort: true
+        //                 }, {
+        //                     field: 'wealth',
+        //                     title: '操作',
+        //                     width: 142
+        //                 }
+        //             ]
+        //         ]
+
+
+        //     });
+        // })
     </script>
 </body>
 
