@@ -76,6 +76,15 @@
     /* 广告管理 */
     /* 申请达人 */
     /* 申请达人 */
+    /* 申请达人 */
+    /* 视频 */
+    /* 日记 */
+    /* 日记 */
+    /* 日记 */
+    /* 产品统计 */
+    /* 日记 */
+    /* 版本管理 */
+    /* 版本管理 */
   }
   .pc nav #outer .content {
     display: none;
@@ -506,7 +515,7 @@
     height: 38px;
   }
   .pc nav #outer .content_13 #form_Po .Po_label {
-    width: 50px;
+    width: 70px;
     padding: 9px 0px;
     text-align: center;
   }
@@ -530,6 +539,249 @@
   .pc nav #outer .content_13 .Po_list .layui-border-box .layui-table-box .layui-table-main table tbody tr .layui-table-cell .layui-form-item img {
     width: 100%;
     height: 100%;
+  }
+  .pc nav #outer .content_14 {
+    width: 100%;
+    /* 缩略图 */
+  }
+  .pc nav #outer .content_14 #form_answers {
+    height: 38px;
+  }
+  .pc nav #outer .content_14 #form_answers .answers_label {
+    width: 60px;
+    padding: 9px 0px;
+    text-align: center;
+  }
+  .pc nav #outer .content_14 #form_answers .layui-input-inline {
+    float: left;
+    display: flex;
+  }
+  .pc nav #outer .content_14 #form_answers .layui-input-inline input {
+    width: 80px;
+  }
+  .pc nav #outer .content_14 #form_answers .but_answers {
+    margin-left: 20px;
+  }
+  .pc nav #outer .content_14 #form_answers .but_answers_02 {
+    margin-left: 10px;
+  }
+  .pc nav #outer .content_14 .answers_list .layui-border-box .layui-table-box .layui-table-main table tbody tr .layui-table-cell .layui-form-item {
+    width: 52px;
+    height: 30px;
+  }
+  .pc nav #outer .content_14 .answers_list .layui-border-box .layui-table-box .layui-table-main table tbody tr .layui-table-cell .layui-form-item img {
+    width: 100%;
+    height: 100%;
+  }
+  .pc nav #outer .content_15 {
+    width: 100%;
+    /* 缩略图 */
+  }
+  .pc nav #outer .content_15 #form_video {
+    height: 38px;
+  }
+  .pc nav #outer .content_15 #form_video .video_label {
+    width: 60px;
+    padding: 9px 0px;
+    text-align: center;
+  }
+  .pc nav #outer .content_15 #form_video .layui-input-inline {
+    float: left;
+    display: flex;
+  }
+  .pc nav #outer .content_15 #form_video .layui-input-inline input {
+    width: 80px;
+  }
+  .pc nav #outer .content_15 #form_video .but_video {
+    margin-left: 20px;
+  }
+  .pc nav #outer .content_15 #form_video .but_video_02 {
+    margin-left: 10px;
+  }
+  .pc nav #outer .content_15 .video_list .layui-border-box .layui-table-box .layui-table-main table tbody tr .layui-table-cell .layui-form-item {
+    width: 52px;
+    height: 30px;
+  }
+  .pc nav #outer .content_15 .video_list .layui-border-box .layui-table-box .layui-table-main table tbody tr .layui-table-cell .layui-form-item img {
+    width: 100%;
+    height: 100%;
+  }
+  .pc nav #outer .content_16 {
+    width: 100%;
+    /* 缩略图 */
+  }
+  .pc nav #outer .content_16 #form_diary {
+    height: 38px;
+  }
+  .pc nav #outer .content_16 #form_diary .diary_label {
+    width: 60px;
+    padding: 9px 0px;
+    text-align: center;
+  }
+  .pc nav #outer .content_16 #form_diary .layui-input-inline {
+    float: left;
+    display: flex;
+  }
+  .pc nav #outer .content_16 #form_diary .layui-input-inline input {
+    width: 80px;
+  }
+  .pc nav #outer .content_16 #form_diary .but_diary {
+    margin-left: 20px;
+  }
+  .pc nav #outer .content_16 #form_diary .but_diary_02 {
+    margin-left: 10px;
+  }
+  .pc nav #outer .content_16 .diary_list .layui-border-box .layui-table-box .layui-table-main table tbody tr .layui-table-cell .layui-form-item {
+    width: 52px;
+    height: 30px;
+  }
+  .pc nav #outer .content_16 .diary_list .layui-border-box .layui-table-box .layui-table-main table tbody tr .layui-table-cell .layui-form-item img {
+    width: 100%;
+    height: 100%;
+  }
+  .pc nav #outer .content_17 {
+    width: 100%;
+    /* 缩略图 */
+  }
+  .pc nav #outer .content_17 #form_discuss {
+    height: 38px;
+  }
+  .pc nav #outer .content_17 #form_discuss .discuss_label {
+    width: 60px;
+    padding: 9px 0px;
+    text-align: center;
+  }
+  .pc nav #outer .content_17 #form_discuss .layui-input-inline {
+    float: left;
+    display: flex;
+  }
+  .pc nav #outer .content_17 #form_discuss .layui-input-inline input {
+    width: 190px;
+  }
+  .pc nav #outer .content_17 #form_discuss .but_discuss {
+    margin-left: 20px;
+  }
+  .pc nav #outer .content_17 #form_discuss .but_discuss_02 {
+    margin-left: 10px;
+  }
+  .pc nav #outer .content_17 .discuss_list .layui-border-box .layui-table-box .layui-table-main table tbody tr .layui-table-cell .layui-form-item {
+    width: 52px;
+    height: 30px;
+  }
+  .pc nav #outer .content_17 .discuss_list .layui-border-box .layui-table-box .layui-table-main table tbody tr .layui-table-cell .layui-form-item img {
+    width: 100%;
+    height: 100%;
+  }
+  .pc nav #outer .content_18 {
+    width: 100%;
+    /* 缩略图 */
+  }
+  .pc nav #outer .content_18 #form_revert {
+    height: 38px;
+  }
+  .pc nav #outer .content_18 #form_revert .revert_label {
+    width: 60px;
+    padding: 9px 0px;
+    text-align: center;
+  }
+  .pc nav #outer .content_18 #form_revert .layui-input-inline {
+    float: left;
+    display: flex;
+  }
+  .pc nav #outer .content_18 #form_revert .layui-input-inline input {
+    width: 190px;
+  }
+  .pc nav #outer .content_18 #form_revert .but_revert {
+    margin-left: 20px;
+  }
+  .pc nav #outer .content_18 #form_revert .but_revert_02 {
+    margin-left: 10px;
+  }
+  .pc nav #outer .content_18 .revert_list .layui-border-box .layui-table-box .layui-table-main table tbody tr .layui-table-cell .layui-form-item {
+    width: 52px;
+    height: 30px;
+  }
+  .pc nav #outer .content_18 .revert_list .layui-border-box .layui-table-box .layui-table-main table tbody tr .layui-table-cell .layui-form-item img {
+    width: 100%;
+    height: 100%;
+  }
+  .pc nav #outer .content_19 {
+    width: 100%;
+  }
+  .pc nav #outer .content_19 #form_statistics {
+    height: 38px;
+  }
+  .pc nav #outer .content_19 #form_statistics .statistics_label {
+    width: 60px;
+    padding: 9px 0px;
+    text-align: center;
+  }
+  .pc nav #outer .content_19 #form_statistics .layui-input-inline {
+    float: left;
+    display: flex;
+  }
+  .pc nav #outer .content_19 #form_statistics .layui-input-inline input {
+    width: 190px;
+  }
+  .pc nav #outer .content_19 #form_statistics .but_statistics {
+    margin-left: 20px;
+  }
+  .pc nav #outer .content_20 {
+    width: 100%;
+  }
+  .pc nav #outer .content_20 #form_ditch {
+    height: 38px;
+  }
+  .pc nav #outer .content_20 #form_ditch .ditch_label {
+    width: 60px;
+    padding: 9px 0px;
+    text-align: center;
+  }
+  .pc nav #outer .content_20 #form_ditch .layui-input-inline {
+    float: left;
+    display: flex;
+  }
+  .pc nav #outer .content_20 #form_ditch .layui-input-inline input {
+    width: 190px;
+  }
+  .pc nav #outer .content_20 #form_ditch .but_ditch {
+    margin-left: 20px;
+  }
+  .pc nav #outer .content_20 #form_ditch .but_ditch_02 {
+    margin-left: 10px;
+  }
+  .pc nav #outer .content_21 {
+    width: 100%;
+  }
+  .pc nav #outer .content_21 #form_versions {
+    height: 38px;
+  }
+  .pc nav #outer .content_21 #form_versions .versions_label {
+    width: 60px;
+    padding: 9px 0px;
+    text-align: center;
+  }
+  .pc nav #outer .content_21 #form_versions .layui-input-inline {
+    float: left;
+    display: flex;
+  }
+  .pc nav #outer .content_21 #form_versions .layui-input-inline input {
+    width: 190px;
+  }
+  .pc nav #outer .content_21 #form_versions .but_versions {
+    margin-left: 20px;
+  }
+  .pc nav #outer .content_21 #form_versions .but_versions_02 {
+    margin-left: 10px;
+  }
+  .pc nav #outer .content_22 {
+    width: 100%;
+  }
+  .pc nav #outer .content_22 #form_data {
+    height: 38px;
+  }
+  .pc nav #outer .content_22 #form_data .but_data {
+    margin-left: 20px;
   }
   .pc .crumbs {
     height: 50px;

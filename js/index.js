@@ -16,8 +16,6 @@ $(function () {
     })
     // sessionStorage
     $(document).ready(function () {
-
-
         var user = JSON.parse(sessionStorage.getItem('index'))
         change(user);
     });

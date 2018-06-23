@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 管理设置,状态按钮的模版 -->
+    <script type="text/html" id="titleTpl">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 管理设置,编辑按钮的模版 -->
+    <script type="text/html" id="btn_management">
+        <!-- <form action="" class="layui-form"> -->
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+            <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
+        </div>
+        <!-- </form> -->
+    </script>
+
+    <!-- 角色设置的模版 -->
+    <script type="text/html" id="btn_role">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+            <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
+        </div>
+    </script>
+
+    <!-- 用户管理模版-状态 -->
+    <script type="text/html" id="btn_state_01">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 用户管理模版-操作 -->
+    <script type="text/html" id="btn_handle_01">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+        </div>
+    </script>
+
+    <!-- 标签管理-热门 -->
+    <script type="text/html" id="btn_hot_01">
+        {{# if(d.tests_01==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 标签管理-推荐 -->
+    <script type="text/html" id="btn_recommend_01">
+        {{# if(d.tests_01==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 标签管理-官方 -->
+    <script type="text/html" id="btn_official_01">
+        {{# if(d.tests_01==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 标签管理-状态 -->
+    <script type="text/html" id="btn_state_02">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 标签管理-操作 -->
+    <script type="text/html" id="btn_handle_02">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+        </div>
+    </script>
+
+
+    <!-- 话题管理-缩略图 -->
+    <script type="text/html" id="topic_thumbnail">
+        <div class="layui-form-item">
+            <img src="{{ d.img}}">
+        </div>
+    </script>
+    <!-- 话题管理-封面图 -->
+    <script type="text/html" id="topic_cover">
+        <div class="layui-form-item">
+            <img src="{{ d.img}}">
+        </div>
+    </script>
+    <!-- 话题管理-推荐 -->
+    <script type="text/html" id="btn_recommend_02">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="推荐|推荐" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="推荐|推荐" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 话题管理-状态 -->
+    <script type="text/html" id="btn_state_03">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 话题管理-操作 -->
+    <script type="text/html" id="btn_handle_03">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+            <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
+        </div>
+    </script>
+
+    <!-- 类目管理-状态 -->
+    <script type="text/html" id="btn_state_04">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 类目管理-操作 -->
+    <script type="text/html" id="btn_handle_04">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+            <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
+        </div>
+    </script>
+
+    <!-- 品牌管理-官方 -->
+    <script type="text/html" id="btn_official_02">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="官方|官方" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="官方|官方" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 品牌管理-状态 -->
+    <script type="text/html" id="btn_state_05">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 品牌管理-操作 -->
+    <script type="text/html" id="btn_handle_05">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+            <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
+        </div>
+    </script>
+
+    <!-- 品牌系列管理-官方 -->
+    <script type="text/html" id="btn_official_03">
+        {{# if(d.tests_01==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="官方|官方" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="官方|官方" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 品牌系列管理-状态 -->
+    <script type="text/html" id="btn_state_06">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 品牌系列管理-操作 -->
+    <script type="text/html" id="btn_handle_06">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+            <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
+        </div>
+    </script>
+
+    <!-- 广告管理-图片 -->
+    <script type="text/html" id="advertising_img">
+        <div class="layui-form-item">
+            <img src="{{ d.img}}">
+        </div>
+    </script>
+    <!-- 广告管理-状态 -->
+    <script type="text/html" id="btn_state_07">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 广告管理-操作 -->
+    <script type="text/html" id="btn_handle_07">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+            <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
+        </div>
+    </script>
+
+    <!-- PO图-用户昵称 -->
+    <script type="text/html" id="Po_img_01">
+        <div class="layui-form-item">
+            <img src="{{ d.img}}">
+            <span>{{d.sex}}</span>
+        </div>
+    </script>
+    <!-- PO图-图片 -->
+    <script type="text/html" id="Po_img_02">
+        <div class="layui-form-item">
+            <img src="{{ d.img}}">
+            <span>{{d.wealth}}</span>
+        </div>
+    </script>
+    <!-- PO图-推荐 -->
+    <script type="text/html" id="btn_recommend_03">
+        {{# if(d.tests_01==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="推荐|推荐" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="推荐|推荐" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- PO图-状态 -->
+    <script type="text/html" id="btn_state_08">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- PO图-操作 -->
+    <script type="text/html" id="btn_handle_08">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">评论</i>
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+            <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
+        </div>
+    </script>
+
+    <!-- 问答-用户昵称 -->
+    <script type="text/html" id="answers_img">
+        <div class="layui-form-item">
+            <img src="{{ d.img}}">
+            <span>{{d.sex}}</span>
+        </div>
+    </script>
+    <!-- 问答-推荐 -->
+    <script type="text/html" id="btn_recommend_04">
+        {{# if(d.tests_01==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="推荐|推荐" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="推荐|推荐" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 问答-状态 -->
+    <script type="text/html" id="btn_state_09">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 问答-操作 -->
+    <script type="text/html" id="btn_handle_09">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">评论</i>
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+            <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
+        </div>
+    </script>
+
+    <!-- 视频-用户昵称 -->
+    <script type="text/html" id="video_img_01">
+        <div class="layui-form-item">
+            <img src="{{ d.img}}">
+            <span>{{d.sex}}</span>
+        </div>
+    </script>
+    <!-- 视频-封面图 -->
+    <script type="text/html" id="video_img_02">
+        <div class="layui-form-item">
+            <img src="{{ d.img}}">
+            <span>{{d.sex}}</span>
+        </div>
+    </script>
+    <!-- 推视频荐-推荐 -->
+    <script type="text/html" id="btn_recommend_05">
+        {{# if(d.tests_01==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="推荐|推荐" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="推荐|推荐" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 视频-状态 -->
+    <script type="text/html" id="btn_state_10">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 视频-操作 -->
+    <script type="text/html" id="btn_handle_10">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">评论</i>
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+            <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
+        </div>
+    </script>
+
+    <!-- 日记-用户昵称 -->
+    <script type="text/html" id="diary_img">
+        <div class="layui-form-item">
+            <img src="{{ d.img}}">
+            <span>{{d.sex}}</span>
+        </div>
+    </script>
+    <!-- 日记-推荐 -->
+    <script type="text/html" id="btn_recommend_06">
+        {{# if(d.tests_01==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="推荐|推荐" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="推荐|推荐" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 日记-状态 -->
+    <script type="text/html" id="btn_state_11">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 日记-操作 -->
+    <script type="text/html" id="btn_handle_11">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">评论</i>
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+            <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
+        </div>
+    </script>
+
+
+</body>
+</html>

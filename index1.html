@@ -83,7 +83,7 @@
                     </dl>
                 </li>
                 <!-- 内容管理 -->
-                <li class="layui-nav-item layui-nav-itemed">
+                <li class="layui-nav-item">
                     <a href="javascript:;">内容管理</a>
                     <dl class="layui-nav-child">
                         <dd setIndex="13">
@@ -122,7 +122,7 @@
                     </dl>
                 </li>
                 <!-- 高级设置 -->
-                <li class="layui-nav-item">
+                <li class="layui-nav-item layui-nav-itemed">
                     <a href="javascript:;">高级设置</a>
                     <dl class="layui-nav-child">
                         <dd setIndex="20">
@@ -824,23 +824,413 @@
                     </div>
                 </div>
                 <!-- 问答 -->
-                <div class="content">我是第14页内容</div>
+                <div class="content content_14">
+                    <form action="" class="layui-form" id="form_answers">
+                        <label class="layui-form-label answers_label">状态</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">启用</option>
+                                <option value="2">禁用</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label answers_label">推荐</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">推荐</option>
+                                <option value="2">非推荐</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label answers_label">类目</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1"> ├ 精华</option>
+                                <option value="2"> ├ 眼霜</option>
+                                <option value="3"> ├ 面霜</option>
+                                <option value="4"> ├ 乳液/凝胶</option>
+                                <option value="5"> ├ 爽肤水</option>
+                                <option value="6"> ├ 修护霜</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label answers_label">品牌</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">OSM欧诗漫</option>
+                                <option value="2">PRETALE瞳话</option>
+                                <option value="3">盼丽风姿</option>
+                                <option value="4">REVITAL悦薇</option>
+                                <option value="5">京卫本草</option>
+                                <option value="6">L\'Artisan 阿蒂仙</option>
+                                <option value="7">RANCE兰斯</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label answers_label">品牌</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">上妆还靠手吗？</option>
+                                <option value="2">香香公主·香水香氛</option>
+                                <option value="3">天价美容仪有用吗？</option>
+                                <option value="4">那些被埋没的小众口红</option>
+                                <option value="5">小众卸妆知多少</option>
+                                <option value="6">春季单身狗约会妆</option>
+                                <option value="7">年后减肥小妙招</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label answers_label">用户昵称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                        </div>
+                        <label class="layui-form-label answers_label">关键字</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                        </div>
+                        <!-- 搜索按钮 -->
+                        <button type="button" class="layui-btn but_answers" lay-submit lay-filter="formDemo">搜索</button>
+                        <!-- 新增按钮 -->
+                        <button type="button" class="layui-btn but_answers_02" lay-submit lay-filter="formDemo">新增问答</button>
+                    </form>
+                    <!-- 问答.据列表 -->
+                    <div class="answers_list">
+                        <table id="answers_list" lay-filter="test"></table>
+                    </div>
+                </div>
                 <!-- 视频 -->
-                <div class="content">我是第15页内容</div>
+                <div class="content content_15">
+                    <form action="" class="layui-form" id="form_video">
+                        <label class="layui-form-label video_label">状态</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">启用</option>
+                                <option value="2">禁用</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label video_label">推荐</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">推荐</option>
+                                <option value="2">非推荐</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label video_label">类目</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1"> ├ 精华</option>
+                                <option value="2"> ├ 眼霜</option>
+                                <option value="3"> ├ 面霜</option>
+                                <option value="4"> ├ 乳液/凝胶</option>
+                                <option value="5"> ├ 爽肤水</option>
+                                <option value="6"> ├ 修护霜</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label video_label">品牌</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">OSM欧诗漫</option>
+                                <option value="2">PRETALE瞳话</option>
+                                <option value="3">盼丽风姿</option>
+                                <option value="4">REVITAL悦薇</option>
+                                <option value="5">京卫本草</option>
+                                <option value="6">L\'Artisan 阿蒂仙</option>
+                                <option value="7">RANCE兰斯</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label video_label">品牌</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">上妆还靠手吗？</option>
+                                <option value="2">香香公主·香水香氛</option>
+                                <option value="3">天价美容仪有用吗？</option>
+                                <option value="4">那些被埋没的小众口红</option>
+                                <option value="5">小众卸妆知多少</option>
+                                <option value="6">春季单身狗约会妆</option>
+                                <option value="7">年后减肥小妙招</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label video_label">用户昵称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                        </div>
+                        <label class="layui-form-label video_label">关键字</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                        </div>
+                        <!-- 搜索按钮 -->
+                        <button type="button" class="layui-btn but_video" lay-submit lay-filter="formDemo">搜索</button>
+                        <!-- 新增按钮 -->
+                        <button type="button" class="layui-btn but_video_02" lay-submit lay-filter="formDemo">新增视频</button>
+                    </form>
+                    <!-- 视频.据列表 -->
+                    <div class="video_list">
+                        <table id="video_list" lay-filter="test"></table>
+                    </div>
+                </div>
                 <!-- 日记 -->
-                <div class="content">我是第16页内容</div>
+                <div class="content content_16">
+                    <form action="" class="layui-form" id="form_diary">
+                        <label class="layui-form-label diary_label">状态</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">启用</option>
+                                <option value="2">禁用</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label diary_label">推荐</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">推荐</option>
+                                <option value="2">非推荐</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label diary_label">类目</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1"> ├ 精华</option>
+                                <option value="2"> ├ 眼霜</option>
+                                <option value="3"> ├ 面霜</option>
+                                <option value="4"> ├ 乳液/凝胶</option>
+                                <option value="5"> ├ 爽肤水</option>
+                                <option value="6"> ├ 修护霜</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label diary_label">品牌</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">OSM欧诗漫</option>
+                                <option value="2">PRETALE瞳话</option>
+                                <option value="3">盼丽风姿</option>
+                                <option value="4">REVITAL悦薇</option>
+                                <option value="5">京卫本草</option>
+                                <option value="6">L\'Artisan 阿蒂仙</option>
+                                <option value="7">RANCE兰斯</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label diary_label">品牌</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">上妆还靠手吗？</option>
+                                <option value="2">香香公主·香水香氛</option>
+                                <option value="3">天价美容仪有用吗？</option>
+                                <option value="4">那些被埋没的小众口红</option>
+                                <option value="5">小众卸妆知多少</option>
+                                <option value="6">春季单身狗约会妆</option>
+                                <option value="7">年后减肥小妙招</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label diary_label">用户昵称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                        </div>
+                        <label class="layui-form-label diary_label">关键字</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                        </div>
+                        <!-- 搜索按钮 -->
+                        <button type="button" class="layui-btn but_diary" lay-submit lay-filter="formDemo">搜索</button>
+                        <!-- 新增按钮 -->
+                        <button type="button" class="layui-btn but_diary_02" lay-submit lay-filter="formDemo">新增日记</button>
+                    </form>
+                    <!-- 日记.据列表 -->
+                    <div class="diary_list">
+                        <table id="diary_list" lay-filter="test"></table>
+                    </div>
+                </div>
                 <!-- 评论管理 -->
-                <div class="content">我是第17页内容</div>
+                <div class="content content_17">
+                    <form action="" class="layui-form" id="form_discuss">
+                        <label class="layui-form-label discuss_label">状态</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">启用</option>
+                                <option value="2">禁用</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label discuss_label">用户昵称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                        </div>
+                        <label class="layui-form-label discuss_label">关键字</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                        </div>
+                        <!-- 搜索按钮 -->
+                        <button type="button" class="layui-btn but_discuss" lay-submit lay-filter="formDemo">搜索</button>
+                        <!-- 新增按钮 -->
+                        <button type="button" class="layui-btn but_discuss_02" lay-submit lay-filter="formDemo">新增评论</button>
+                    </form>
+                    <!-- 日记.据列表 -->
+                    <div class="discuss_list">
+                        <table id="discuss_list" lay-filter="test"></table>
+                    </div>
+                </div>
                 <!-- 回复管理 -->
-                <div class="content">我是第18页内容</div>
+                <div class="content content_18">
+                    <form action="" class="layui-form" id="form_revert">
+                        <label class="layui-form-label revert_label">状态</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">启用</option>
+                                <option value="2">禁用</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label revert_label">回复人</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                        </div>
+                        <label class="layui-form-label revert_label">评论内容</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                        </div>
+                        <label class="layui-form-label revert_label">回复内容</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                        </div>
+                        <!-- 搜索按钮 -->
+                        <button type="button" class="layui-btn but_revert" lay-submit lay-filter="formDemo">搜索</button>
+                        <!-- 新增按钮 -->
+                        <button type="button" class="layui-btn but_revert_02" lay-submit lay-filter="formDemo">新增回复</button>
+                    </form>
+                    <!-- 回复.据列表 -->
+                    <div class="revert_list">
+                        <table id="revert_list" lay-filter="test"></table>
+                    </div>
+                </div>
                 <!-- 产品统计 -->
-                <div class="content">我是第19页内容</div>
+                <div class="content content_19">
+                    <form action="" class="layui-form" id="form_statistics">
+                        <label class="layui-form-label statistics_label">状态</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">OSM欧诗漫</option>
+                                <option value="2">PRETALE瞳话</option>
+                                <option value="3">盼丽风姿</option>
+                                <option value="4">REVITAL悦薇</option>
+                                <option value="5">京卫本草</option>
+                                <option value="6">L\'Artisan 阿蒂仙</option>
+                                <option value="7">RANCE兰斯</option>
+                            </select>
+                        </div>
+
+                        <!-- 搜索按钮 -->
+                        <button type="button" class="layui-btn but_statistics" lay-submit lay-filter="formDemo">搜索</button>
+                    </form>
+                    <!-- 产品统计.据列表 -->
+                    <div class="statistics_list">
+                        <table id="statistics_list" lay-filter="test"></table>
+                    </div>
+                </div>
                 <!-- 渠道管理 -->
-                <div class="content">我是第20页内容</div>
+                <div class="content content_20">
+                    <form action="" class="layui-form" id="form_ditch">
+                        <label class="layui-form-label ditch_label">状态</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">启用</option>
+                                <option value="2">禁用</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label ditch_label">平台</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">IOS</option>
+                                <option value="2">安卓</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label ditch_label">名称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                        </div>
+                        <label class="layui-form-label ditch_label">标识</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                        </div>
+                        <!-- 搜索按钮 -->
+                        <button type="button" class="layui-btn but_ditch" lay-submit lay-filter="formDemo">搜索</button>
+                        <!-- 新增按钮 -->
+                        <button type="button" class="layui-btn but_ditch_02" lay-submit lay-filter="formDemo">新增渠道</button>
+                    </form>
+                    <!-- 渠道管理.据列表 -->
+                    <div class="ditch_list">
+                        <table id="ditch_list" lay-filter="test"></table>
+                    </div>
+                </div>
                 <!-- 版本管理 -->
-                <div class="content">我是第21页内容</div>
+                <div class="content content_21">
+                    <form action="" class="layui-form" id="form_versions">
+                        <label class="layui-form-label versions_label">状态</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">渠道</option>
+                                <option value="2">魅族</option>
+                                <option value="3">OPPO</option>
+                                <option value="4">安卓市场</option>
+                                <option value="5">91助手</option>
+                                <option value="6">新浪</option>
+                                <option value="7">阿里巴巴</option>
+                                <option value="8">百度</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label versions_label">平台</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">IOS</option>
+                                <option value="2">安卓</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label versions_label">强制更新</label>
+                        <div class="layui-input-inline">
+                            <select>
+                                <option value="">全部</option>
+                                <option value="1">是</option>
+                                <option value="2">否</option>
+                            </select>
+                        </div>
+                        <label class="layui-form-label versions_label">版本号</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="title" placeholder="请输入昵称" autocomplete="off" class="layui-input">
+                        </div>
+                        <!-- 搜索按钮 -->
+                        <button type="button" class="layui-btn but_versions" lay-submit lay-filter="formDemo">搜索</button>
+                        <!-- 新增按钮 -->
+                        <button type="button" class="layui-btn but_versions_02" lay-submit lay-filter="formDemo">新增渠道</button>
+                    </form>
+                    <!-- 版本管理.据列表 -->
+                    <div class="versions_list">
+                        <table id="versions_list" lay-filter="test"></table>
+                    </div>
+                </div>
                 <!-- 数据表优化 -->
-                <div class="content">我是第22页内容</div>
+                <div class="content content_22">
+                    <form action="" class="layui-form" id="form_data">
+                        <!-- 数据表优化按钮 -->
+                        <button type="button" class="layui-btn but_data" lay-submit lay-filter="formDemo">数据表优化</button>
+                    </form>
+                    <!-- 数据表优化.据列表 -->
+                    <div class="data_list">
+                        <table id="data_list" lay-filter="test"></table>
+                    </div>
+
+                </div>
                 <!-- 阿里云OSS资源 -->
                 <div class="content">我是第23页内容</div>
                 <!-- 错误报告 -->
@@ -892,7 +1282,6 @@
         </form>
         {{# } }}
     </script>
-
     <!-- 管理设置,编辑按钮的模版 -->
     <script type="text/html" id="btn_management">
         <!-- <form action="" class="layui-form"> -->
@@ -1221,14 +1610,34 @@
     <!-- PO图-用户昵称 -->
     <script type="text/html" id="Po_img_01">
         <div class="layui-form-item">
-            <img src="{{ d.img}}"><span>{{d.sex}}</span>
+            <img src="{{ d.img}}">
+            <span>{{d.sex}}</span>
         </div>
     </script>
     <!-- PO图-图片 -->
     <script type="text/html" id="Po_img_02">
         <div class="layui-form-item">
-            <img src="{{ d.img}}"><span>{{d.wealth}}</span>
+            <img src="{{ d.img}}">
+            <span>{{d.wealth}}</span>
         </div>
+    </script>
+    <!-- PO图-推荐 -->
+    <script type="text/html" id="btn_recommend_03">
+        {{# if(d.tests_01==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="推荐|推荐" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="推荐|推荐" class="test">
+            </div>
+        </form>
+        {{# } }}
     </script>
     <!-- PO图-状态 -->
     <script type="text/html" id="btn_state_08">
@@ -1256,6 +1665,304 @@
             <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
         </div>
     </script>
+
+    <!-- 问答-用户昵称 -->
+    <script type="text/html" id="answers_img">
+        <div class="layui-form-item">
+            <img src="{{ d.img}}">
+            <span>{{d.sex}}</span>
+        </div>
+    </script>
+    <!-- 问答-推荐 -->
+    <script type="text/html" id="btn_recommend_04">
+        {{# if(d.tests_01==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="推荐|推荐" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="推荐|推荐" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 问答-状态 -->
+    <script type="text/html" id="btn_state_09">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 问答-操作 -->
+    <script type="text/html" id="btn_handle_09">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">评论</i>
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+            <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
+        </div>
+    </script>
+
+    <!-- 视频-用户昵称 -->
+    <script type="text/html" id="video_img_01">
+        <div class="layui-form-item">
+            <img src="{{ d.img}}">
+            <span>{{d.sex}}</span>
+        </div>
+    </script>
+    <!-- 视频-封面图 -->
+    <script type="text/html" id="video_img_02">
+        <div class="layui-form-item">
+            <img src="{{ d.img}}">
+            <span>{{d.sex}}</span>
+        </div>
+    </script>
+    <!-- 推视频荐-推荐 -->
+    <script type="text/html" id="btn_recommend_05">
+        {{# if(d.tests_01==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="推荐|推荐" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="推荐|推荐" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 视频-状态 -->
+    <script type="text/html" id="btn_state_10">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 视频-操作 -->
+    <script type="text/html" id="btn_handle_10">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">评论</i>
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+            <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
+        </div>
+    </script>
+
+    <!-- 日记-用户昵称 -->
+    <script type="text/html" id="diary_img">
+        <div class="layui-form-item">
+            <img src="{{ d.img}}">
+            <span>{{d.sex}}</span>
+        </div>
+    </script>
+    <!-- 日记-推荐 -->
+    <script type="text/html" id="btn_recommend_06">
+        {{# if(d.tests_01==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="推荐|推荐" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="推荐|推荐" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 日记-状态 -->
+    <script type="text/html" id="btn_state_11">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 日记-操作 -->
+    <script type="text/html" id="btn_handle_11">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">评论</i>
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+            <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
+        </div>
+    </script>
+
+    <!-- 评论-昵称 -->
+    <script type="text/html" id="discuss_img">
+        <div class="layui-form-item">
+            <img src="{{ d.img}}">
+            <span>{{d.sex}}</span>
+        </div>
+    </script>
+    <!-- 评论-状态 -->
+    <script type="text/html" id="btn_state_12">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 评论-操作 -->
+    <script type="text/html" id="btn_handle_12">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">回复</i>
+            <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
+        </div>
+    </script>
+
+    <!-- 回复-被回复人 -->
+    <script type="text/html" id="revert_img_01">
+        <div class="layui-form-item">
+            <img src="{{ d.img}}">
+            <span>{{d.sex}}</span>
+        </div>
+    </script>
+    <!-- 回复-回复人 -->
+    <script type="text/html" id="revert_img_02">
+        <div class="layui-form-item">
+            <img src="{{ d.img}}">
+            <span>{{d.sex}}</span>
+        </div>
+    </script>
+    <!-- 回复-状态 -->
+    <script type="text/html" id="btn_state_13">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 回复-操作 -->
+    <script type="text/html" id="btn_handle_13">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
+        </div>
+    </script>
+
+    <!-- 渠道管理-状态 -->
+    <script type="text/html" id="btn_state_14">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="开启|禁用" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 渠道管理-操作 -->
+    <script type="text/html" id="btn_handle_14">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+            <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
+        </div>
+    </script>
+
+    <!-- 渠道管版本管理理-状态 -->
+    <script type="text/html" id="btn_state_15">
+        {{# if(d.tests==1){ }}
+        <!-- tests这个id,就系json文件里定义的 -->
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="是|否" class="test" checked>
+            </div>
+        </form>
+
+        {{# } else { }}
+        <form action="" class="layui-form">
+            <div class="layui-form-item">
+                <input type="checkbox" name="zzz" lay-skin="switch" lay-text="是|否" class="test">
+            </div>
+        </form>
+        {{# } }}
+    </script>
+    <!-- 渠道管理-操作 -->
+    <script type="text/html" id="btn_handle_15">
+        <div class="layui-form-item">
+            <i class="layui-btn layui-btn-normal" style="text-align: center;line-height:28px;">逻辑</i>
+            <i class="layui-btn layui-btn-danger" style="text-align: center;line-height:28px;">删除</i>
+        </div>
+    </script>
+
+
+
+
+
+
+
+
+
+
+
 
 
     <!-- 引入jquery -->
